@@ -28,3 +28,4 @@ export * from './metadata/common.js';
 export * from './metadata/openAlexClient.js';
 export * from './metadata/metadataResolver.js';
 export * from './metadata/crossrefAuthorYearResolver.js';
+export * from './discovery/engine/classifierBridge.js';
