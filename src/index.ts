@@ -8,10 +8,14 @@ export * from './classifier/outcomeClassification.js';
 export * from './classifier/confidence.js';
 export * from './classifier/classifier.js';
 export * from './discovery/engine/keywordExpander.js';
-export * from './discovery/engine/candidateNormalizer.js';
+// candidateNormalizer also defines a local normalizeDoi (simpler, for internal candidate use).
+// Only normalizeCandidate + mergeCandidates are barrel-exported from it; the authoritative
+// public normalizeDoi comes from util/normalizeDoi (full-featured, floraLookup-parity).
+export { normalizeCandidate, mergeCandidates } from './discovery/engine/candidateNormalizer.js';
 export * from './discovery/engine/candidateRanker.js';
 export * from './discovery/engine/exclusionFilter.js';
 export * from './discovery/spec/canonical.js';
 export * from './discovery/spec/loader.js';
 export * from './discovery/engine/sources/sourceAdapter.js';
 export * from './discovery/engine/sources/tokenBucket.js';
+export * from './util/normalizeDoi.js';
