@@ -7,3 +7,7 @@ export * from './classifier/targetResolution.js';
 export * from './classifier/outcomeClassification.js';
 export * from './classifier/confidence.js';
 export * from './classifier/classifier.js';
+export * from './discovery/engine/keywordExpander.js';
+export * from './discovery/engine/candidateNormalizer.js';
+export * from './discovery/engine/candidateRanker.js';
+export * from './discovery/engine/exclusionFilter.js';
