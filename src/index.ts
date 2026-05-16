@@ -31,3 +31,4 @@ export * from './metadata/crossrefAuthorYearResolver.js';
 export * from './discovery/engine/classifierBridge.js';
 export * from './discovery/engine/runPersistence.js';
 export * from './discovery/engine/runner.js';
+export * from './discovery/spec/bundledSpecDir.js';
