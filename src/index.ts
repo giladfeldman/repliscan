@@ -11,3 +11,7 @@ export * from './discovery/engine/keywordExpander.js';
 export * from './discovery/engine/candidateNormalizer.js';
 export * from './discovery/engine/candidateRanker.js';
 export * from './discovery/engine/exclusionFilter.js';
+export * from './discovery/spec/canonical.js';
+export * from './discovery/spec/loader.js';
+export * from './discovery/engine/sources/sourceAdapter.js';
+export * from './discovery/engine/sources/tokenBucket.js';
