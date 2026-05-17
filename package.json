@@ -3,6 +3,30 @@
   "version": "0.1.0",
   "description": "Replication-study discovery: multi-source candidate search, ranking, exclusion, and a deterministic replication classifier for academic papers.",
   "license": "MIT",
+  "author": "Gilad Feldman",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/giladfeldman/repliscan.git"
+  },
+  "homepage": "https://github.com/giladfeldman/repliscan#readme",
+  "bugs": {
+    "url": "https://github.com/giladfeldman/repliscan/issues"
+  },
+  "keywords": [
+    "replication",
+    "replication-discovery",
+    "meta-science",
+    "academic-integrity",
+    "open-science",
+    "citation",
+    "academic",
+    "classifier",
+    "openalex",
+    "crossref"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
