@@ -37,6 +37,7 @@
   "files": ["dist"],
   "scripts": {
     "build": "tsc && npm run copy-spec",
+    "prepare": "npm run build",
     "copy-spec": "node scripts/copy-spec.mjs",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "clean": "rimraf dist"
