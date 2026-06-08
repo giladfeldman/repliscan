@@ -12,13 +12,22 @@ const SUCCESS_RE =
   /(successfully replicate[sd]|replication was successful|we replicate[d]? (?:the )?(?:original|finding)|consistent with the original|supported the original|confirmed the (?:original|previous) finding|(?:results|findings) (?:were|are) consistent with|we found support for|(?:original|previous) (?:effect|finding|result) was (?:supported|replicated)|replicated (?:the |original )?(?:effect|finding|result)|did not differ from (?:the )?original|statistically indistinguishable from (?:the )?original)/i;
 const MIXED_RE =
   /(partial(?:ly)? replicated|mixed (?:evidence|results|findings)?|replicated in some|inconsistent (?:across|results)|only partial support|some but not all|one study replicated.*(?:another|one) did not|replicated for .* but not|significant .*effect .*absence .*eliminated .*presence|effect .*absence .*eliminated .*presence)/i;
+// The original-vs-replication effect comparison must sit within ONE sentence.
+// `[^.!?]{0,180}?` stays inside a sentence; the old `[\s\S]{0,220}?` spanned
+// sentence boundaries and mis-classified e.g. "...d = 0.50. Separately, d = 0.02."
+// (two unrelated effects in different sentences) as an effect-size collapse, a
+// false 'failed' replication verdict (D2).
 const ES_COLLAPSE_RE =
-  /\b(d|g|r|beta|b)\s*=\s*(0\.[2-9]\d?)[\s\S]{0,220}?\b\1\s*=\s*(0\.0\d)\b/i;
+  /\b(d|g|r|beta|b)\s*=\s*(0\.[2-9]\d?)[^.!?]{0,180}?\b\1\s*=\s*(0\.0\d)\b/i;
 
 function splitSentences(text: string): string[] {
+  // Split on a sentence terminator followed by an uppercase letter. The lookahead
+  // used to also allow "(", which split "Smith et al. (2010) failed to replicate"
+  // into an orphan "(2010) failed..." fragment and corrupted the within-sentence
+  // context isNegated relies on (D1). Mirrors targetExtraction.splitSentences.
   return text
     .replace(/\s+/g, " ")
-    .split(/(?<=[.!?])\s+(?=[A-Z(])/)
+    .split(/(?<=[.!?])\s+(?=[A-Z])/)
     .map((s) => s.trim())
     .filter(Boolean);
 }

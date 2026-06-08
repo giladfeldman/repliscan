@@ -1,6 +1,6 @@
 {
   "name": "repliscan",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Replication-study discovery: multi-source candidate search, ranking, exclusion, and a deterministic replication classifier for academic papers.",
   "license": "MIT",
   "author": "Gilad Feldman",
