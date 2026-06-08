@@ -8,15 +8,28 @@
 import type { NormalizedCandidate, RawCandidate } from '../types.js';
 
 /**
- * Normalize a DOI to its canonical form: lowercase, no leading "https://doi.org/"
- * or "doi:" prefix, no trailing slash.
+ * Normalize a DOI to its canonical form: URL-decode, lowercase, drop a
+ * "https://doi.org/" / "doi:" prefix, and strip a trailing "." or "/".
+ *
+ * The earlier version skipped URL-decoding and only stripped a trailing slash
+ * (not a trailing dot), so a URL-encoded ("10.1234%2Fabc") or trailing-dot
+ * ("10.1234/abc.") candidate DOI did not dedup against its clean resolved form
+ * (D4). Kept self-contained — rather than delegating to util/normalizeDoi — so
+ * the space-tolerant "doi: " prefix handling this path relies on is preserved
+ * (util/normalizeDoi strips only the literal "doi:" and leaves the space).
  */
 export function normalizeDoi(doi: string): string {
   if (!doi) return '';
-  let d = doi.trim().toLowerCase();
+  let d = doi.trim();
+  try {
+    d = decodeURIComponent(d);
+  } catch {
+    /* leave as-is if not valid percent-encoding */
+  }
+  d = d.toLowerCase().trim();
   d = d.replace(/^https?:\/\/(?:dx\.)?doi\.org\//, '');
   d = d.replace(/^doi:\s*/, '');
-  d = d.replace(/\/$/, '');
+  d = d.replace(/[./]+$/, '');
   return d;
 }
 

@@ -54,7 +54,12 @@ export class TokenBucket {
         return;
       }
       const waitMs = Math.max(1, ((1 - this.tokens) / this.rate) * 1000);
-      await new Promise((r) => setTimeout(r, Math.min(waitMs, 1000)));
+      await new Promise<void>((resolve) => {
+        const timer = setTimeout(resolve, Math.min(waitMs, 1000));
+        // Don't let a pending backoff timer keep the host process (or a Jest run)
+        // alive at shutdown; the await still resolves on schedule while running (D7).
+        (timer as { unref?: () => void }).unref?.();
+      });
     }
   }
 
