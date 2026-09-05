@@ -1,5 +1,5 @@
 /**
- * outcomeClassification regression tests (citationguard-iterate, 2026-06-08).
+ * outcomeClassification regression tests (the platform's hardening workflow, 2026-06-08).
  *
  * D2: ES_COLLAPSE_RE used `[\s\S]{0,220}` which spanned sentence boundaries, so
  *     two unrelated effects in different sentences were read as an effect-size

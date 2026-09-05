@@ -1,5 +1,5 @@
 /**
- * targetResolution regression test (citationguard-iterate, 2026-06-08).
+ * targetResolution regression test (the platform's hardening workflow, 2026-06-08).
  *
  * D5: resolveTarget compared the FULL reference firstAuthor against the
  * prefix-stripped extracted last name, so a nobiliary-prefix surname stored as

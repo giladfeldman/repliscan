@@ -9,7 +9,7 @@
  * The four methods mirror, exactly, the four DB functions the runner called
  * before the Wave 2 extraction (candidateWriter.upsertCandidates /
  * updateClassifierResult, checkpointStore.updateProgress / checkPauseSignal).
- * The CitationGuard worker implements this interface in discoveryJobRunner.ts,
+ * The Scimeto worker implements this interface in discoveryJobRunner.ts,
  * closing over its Neon client. The method signatures intentionally drop the
  * leading `db` argument the worker functions take — the implementation closes
  * over `db` instead.

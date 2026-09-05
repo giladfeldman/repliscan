@@ -2,7 +2,7 @@
  * Normalize a DOI for consistent lookup.
  * Handles URL-encoding, case, whitespace, URL prefixes, and trailing chars.
  *
- * Copied verbatim from the CitationGuard worker's floraLookup.ts during the
+ * Copied verbatim from the Scimeto worker's floraLookup.ts during the
  * Wave 2 repliscan extraction. The worker keeps its own copy because
  * floraLookup.ts also hosts FLoRA-database logic that is not replication-only.
  * The two copies are intentionally identical; do not let them diverge.

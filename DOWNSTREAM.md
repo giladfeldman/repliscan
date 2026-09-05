@@ -2,18 +2,17 @@
 
 **This library is not standalone infrastructure. It is part of a product.**
 
-## Consumer: Scimeto / CitationGuard
+## Consumer: Scimeto
 
-- **Repo:** `~/Vibe/MetaScienceTools/CitationGuard` — <https://github.com/giladfeldman/Scimeto>
+- **Consumer:** the Scimeto platform (closed source)
 - **Pinned in:** `apps/worker/package.json`, by **git tag** (`github:giladfeldman/repliscan#vX.Y.Z`)
 - **Uses:** replication finding
 - **Reaches users through:** the replication-finder processor, whose output is shown to researchers
   as findings about their manuscript and exported into reports they act on.
 
-Scimeto's side of this relationship is documented in
-`CitationGuard/docs/SUBCOMPONENTS.md`, and the two are checked against each other
-mechanically by `CitationGuard/scripts/review/subcomponent-sync-check.mjs` (grep-checks
-R24), which fails if this file goes missing or stops naming Scimeto.
+Scimeto's side of this relationship is documented on the consumer side, and the two
+are checked against each other mechanically by a sync check there, which fails if this
+file goes missing or stops naming Scimeto.
 
 ## What that means for a change here
 

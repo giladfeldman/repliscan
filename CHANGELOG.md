@@ -2,7 +2,7 @@
 
 ## 0.1.1 — 2026-06-08
 
-Deterministic-classifier hardening (via `citationguard-iterate`). Five fixes to
+Deterministic-classifier hardening (via the platform's hardening workflow). Five fixes to
 the offline replication classifier + discovery normalizer, with fails-before /
 passes-after regression tests. Suite 167 → 176.
 
@@ -44,4 +44,4 @@ passes-after regression tests. Suite 167 → 176.
 
 ## 0.1.0
 
-- Initial behavior-preserving extraction from the CitationGuard platform.
+- Initial behavior-preserving extraction from the Scimeto platform.

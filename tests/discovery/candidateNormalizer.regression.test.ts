@@ -1,5 +1,5 @@
 /**
- * candidateNormalizer.normalizeDoi regression test (citationguard-iterate,
+ * candidateNormalizer.normalizeDoi regression test (the platform's hardening workflow,
  * 2026-06-08).
  *
  * D4: the local normalizeDoi diverged from the canonical util/normalizeDoi — it

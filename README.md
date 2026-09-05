@@ -9,7 +9,7 @@ Pure logic + HTTP clients — no database, no app framework. Credentials (API
 keys, polite-pool mailto) are passed in as parameters; the library never reads
 environment variables. Persistence is injected via a `RunPersistence` interface.
 
-Extracted from the CitationGuard platform so the community can validate and
+Extracted from the Scimeto platform so the community can validate and
 reuse it. Accuracy iteration is ongoing — see [CHANGELOG.md](./CHANGELOG.md) and
 the [release tags](https://github.com/giladfeldman/repliscan/tags) for the
 current version. (No version is quoted here on purpose; a hardcoded one goes
