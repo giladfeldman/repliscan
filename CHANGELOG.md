@@ -2,7 +2,7 @@
 
 ## 0.1.1 — 2026-06-08
 
-Deterministic-classifier hardening (via `scimeto-iterate`). Five fixes to
+Deterministic-classifier hardening (via the platform's hardening workflow). Five fixes to
 the offline replication classifier + discovery normalizer, with fails-before /
 passes-after regression tests. Suite 167 → 176.
 
