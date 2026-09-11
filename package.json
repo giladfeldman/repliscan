@@ -1,6 +1,6 @@
 {
   "name": "repliscan",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Replication-study discovery: multi-source candidate search, ranking, exclusion, and a deterministic replication classifier for academic papers.",
   "license": "MIT",
   "author": "Gilad Feldman",
@@ -31,10 +31,15 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
     "./dist/*": "./dist/*"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc && npm run copy-spec",
     "prepare": "npm run build",

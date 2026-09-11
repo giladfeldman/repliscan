@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.2 — 2026-09-11
+
+**No behavioural change.** A documentation and naming release, tagged so that
+consumers pinning by tag can install the current tree: three commits had
+accumulated past v0.1.1 and were therefore invisible to anyone installing by
+tag, which is what the fleet identity gate flags.
+
+Measured before tagging: **0 non-comment lines changed in `src/`** across
+`v0.1.1..HEAD` — the whole diff is comments, README and CHANGELOG prose.
+Build clean, 22 suites / 176 tests passed.
+
+### Changed
+- The platform is referred to by its product name throughout, and local
+  filesystem paths are no longer named in comments or docs.
+- `DOWNSTREAM.md` records Scimeto as a downstream consumer.
+- The distribution model is stated explicitly; a stale version claim is gone.
+
 ## 0.1.1 — 2026-06-08
 
 Deterministic-classifier hardening (via the platform's hardening workflow). Five fixes to
