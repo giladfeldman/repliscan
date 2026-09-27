@@ -78,7 +78,9 @@ not published to the npm registry. Pin a tag directly:
 npm clones the repository and runs the `prepare` script, which builds `dist/`. A tag pin
 therefore installs a working build without the registry. Always pin an explicit tag: a
 bare `github:giladfeldman/repliscan` follows the default branch, so upstream changes land
-in your build without warning. The package requires Node.js 18 or later and is ESM-only
+in your build without warning. npm 11 prints an `allow-scripts` warning about the
+`prepare` script during this install. The build still runs: this was verified with npm
+11.16 by installing from a local git URL into an empty project. The package requires Node.js 18 or later and is ESM-only
 (`import`, not `require`).
 
 ## Quickstart
