@@ -6,12 +6,11 @@
  *   - One ?query="p1" | "p2" | ... per source per run (S2 uses pipe for OR)
  *   - Local regex pass for per-keyword/per-field attribution
  *   - Offset/limit pagination (S2 caps at offset 999, limit 100)
- *   - Auth: x-api-key header from SEMANTIC_SCHOLAR_API_KEY
+ *   - Auth: x-api-key header from the optional `apiKey` option
  *
  * S2 ships abstracts when present; we don't have to do anything special
  * for missing ones (undefined → runner attribution falls back to title).
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3.7
+
  */
 
 import type {

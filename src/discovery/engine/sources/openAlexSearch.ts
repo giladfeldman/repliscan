@@ -3,15 +3,13 @@
  *
  * Strategy (per source-configs.yaml openalex.query.strategy = "or_bundle"):
  *   - Build ONE big ?search=("p1" OR "p2" OR ...) query containing every phrase permutation.
- *   - Per-keyword and per-field attribution is computed POST-fetch by the runner via the
- *     existing phraseDetection regexes — we don't need separate title/abstract calls.
+ *   - Per-keyword and per-field attribution is computed POST-fetch by the runner via
+ *     attributeKeywords — we don't need separate title/abstract calls.
  *   - Cursor-paginate up to max_pages_per_query.
  *   - 429 → halve bucket rate, sleep Retry-After, retry same cursor (idempotent).
  *
- * Auth: API key required since Feb 13, 2026 (OPENALEX_API_KEY env var). See
- * RATE_LIMITS_VERIFIED.md for the deprecation notice and current rate cap.
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3.7, §4.5
+ * Auth: the optional `apiKey` option (sent as a Bearer token). Without it the
+ * `mailto` option is sent instead. This module reads no environment variables.
  */
 
 import type {

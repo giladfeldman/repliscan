@@ -3,8 +3,7 @@
  * using the formula in ranking-weights.yaml.
  *
  * Pure function. Same candidate + same weights file → same score.
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3.5
+
  */
 
 import yaml from 'js-yaml';

@@ -1,10 +1,8 @@
 # search-keywords.yaml — replication discovery
-# Source: ported from apps/worker/src/services/replication/phraseDetection.ts (18 regexes),
+# Source: the 18 regexes in src/classifier/phraseDetection.ts,
 # expanded with Tier A and filtered Tier B additions reviewed 2026-05-04.
 # Regex variants converted to explicit `permutations` (API search endpoints don't accept regex).
 # Permutations are OR-bundled into a single ?search= query per source per run.
-#
-# Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3.2
 version: 1
 
 verified_against:

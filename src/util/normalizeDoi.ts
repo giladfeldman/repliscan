@@ -2,10 +2,8 @@
  * Normalize a DOI for consistent lookup.
  * Handles URL-encoding, case, whitespace, URL prefixes, and trailing chars.
  *
- * Copied verbatim from the Scimeto worker's floraLookup.ts during the
- * Wave 2 repliscan extraction. The worker keeps its own copy because
- * floraLookup.ts also hosts FLoRA-database logic that is not replication-only.
- * The two copies are intentionally identical; do not let them diverge.
+ * A consuming application keeps an identical copy of this function for its own
+ * DOI lookups, so the two must not diverge: change both or neither.
  */
 export function normalizeDoi(doi: string): string {
   if (!doi) return '';

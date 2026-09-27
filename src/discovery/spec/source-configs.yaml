@@ -11,10 +11,12 @@
 # regexes locally on the title + abstract. We don't need title.search vs abstract.search vs
 # default.search separate calls.
 #
-# **Rate-limit values verified live on 2026-05-04** (see ../RATE_LIMITS_VERIFIED.md). The
-# freshness gate refuses runs with verified_at older than 60 days.
+# **Rate-limit values verified live on 2026-05-04.**
 #
-# Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3.4
+# REFERENCE ONLY: no code in this library reads this file. The runner's 60-day
+# freshness gate checks each adapter's `verifiedAt` constructor option, and the
+# `*_env` keys below are suggested variable names for the consuming application --
+# the library itself never reads an environment variable.
 version: 1
 
 # ---------------------------------------------------------------------------

@@ -4,8 +4,7 @@
  * Each source adapter holds one bucket. Every API call awaits `take()`,
  * which sleeps just long enough for a token to be available based on the
  * configured rate. After a 429, callers can `setRate()` lower defensively.
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §4.5
+
  */
 
 export interface TokenBucketOptions {

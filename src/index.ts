@@ -1,4 +1,5 @@
-// Public API barrel — populated as modules are moved in (Tasks 2-14).
+// Public API barrel. Everything exported here is documented in README.md / docs/API.md,
+// enforced by scripts/check-docs-coverage.mjs.
 export * from './discovery/types.js';
 export * from './classifier/types.js';
 export * from './classifier/phraseDetection.js';
@@ -10,7 +11,7 @@ export * from './classifier/classifier.js';
 export * from './discovery/engine/keywordExpander.js';
 // candidateNormalizer also defines a local normalizeDoi (simpler, for internal candidate use).
 // Only normalizeCandidate + mergeCandidates are barrel-exported from it; the authoritative
-// public normalizeDoi comes from util/normalizeDoi (full-featured, floraLookup-parity).
+// public normalizeDoi comes from util/normalizeDoi (full-featured).
 export { normalizeCandidate, mergeCandidates } from './discovery/engine/candidateNormalizer.js';
 export * from './discovery/engine/candidateRanker.js';
 export * from './discovery/engine/exclusionFilter.js';

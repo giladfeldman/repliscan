@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "repliscan: replication-study discovery and classification"
+type: software
+authors:
+  - family-names: Feldman
+    given-names: Gilad
+    affiliation: University of Innsbruck
+version: "0.1.2"
+license: MIT
+repository-code: "https://github.com/giladfeldman/repliscan"
+abstract: >-
+  A TypeScript library for finding replication studies in the academic literature:
+  OR-bundled phrase search across OpenAlex, Crossref and Semantic Scholar, deterministic
+  keyword expansion, exclusion and ranking, a multi-provider metadata resolver, and a
+  deterministic rule-based replication classifier with a reference-list back-check.
+keywords:
+  - replication
+  - meta-science
+  - open science
+  - research integrity
+  - OpenAlex
+  - Crossref

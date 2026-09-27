@@ -3,14 +3,12 @@
  * discovery runner can use it without depending on its internals.
  *
  * For each candidate the bridge:
- *   1. Fetches full metadata (incl. referencedWorks) via the existing
- *      metadataResolver — leverages the 7-day replication_cache so re-runs
- *      are free.
+ *   1. Fetches full metadata (incl. referencedWorks) via the
+ *      metadataResolver (no caching here — every call goes to the network).
  *   2. Builds a ReplicationClassifierInput.
  *   3. Calls classifyReplication.
  *   4. Maps the result to a ClassifierStatus suitable for replication_candidates.
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3
+
  */
 
 import { classifyReplication } from '../../classifier/classifier.js';
@@ -43,7 +41,7 @@ export interface ClassifierBridgeDeps {
  *                             OR title+abstract empty
  *   - 'accepted'           — at least one unambiguous target found, no ambiguous targets
  *   - 'ambiguous'          — at least one target is ambiguous (multi-match)
- *   - 'errored'            — exception thrown (logged, candidate retained for retry)
+ *   - 'errored'            — the classifier threw (not logged; the caller decides whether to retry)
  */
 export async function classifyCandidate(
   candidate: NormalizedCandidate,

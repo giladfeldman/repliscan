@@ -1,4 +1,3 @@
-// apps/worker/src/services/replication/targetExtraction.ts
 import type { ExtractedTarget } from './types.js';
 
 // Matches: "Smith (2020)", "Smith et al. (2020)", "Smith & Jones (2020)", "Smith, Jones, & Lee (2020)"

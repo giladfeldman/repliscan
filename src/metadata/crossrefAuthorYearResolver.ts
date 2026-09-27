@@ -1,5 +1,3 @@
-// apps/worker/src/services/replication/crossrefAuthorYearResolver.ts
-//
 // Tier-2 Crossref author-year fallback resolver.
 //
 // When the rule-based + back-ref replication extractor cannot determine the
@@ -8,9 +6,6 @@
 //
 // Anti-hallucination: NEVER invents a DOI. If Crossref returns nothing, no
 // candidate scores >= 5, or top/runner-up gap < 1, we return matched=false.
-//
-// Ported from scripts/replication/hackathon-2026-05-06/resolve-author-year.mjs.
-// Scoring algorithm and rate-limit semantics preserved exactly.
 
 import axios from 'axios';
 import { cleanDoi } from './common.js';

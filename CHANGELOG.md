@@ -1,5 +1,28 @@
 # Changelog
 
+## Unreleased
+
+**No behavioural change.** Documentation, tooling and source comments only.
+
+### Added
+- A full README (the method, a runnable offline quickstart, configuration, output and
+  limitations) and `docs/API.md`, which covers every export, field, value and spec id.
+- `scripts/check-docs-coverage.mjs`, a documentation-drift gate. It derives the public
+  surface from `src/index.ts` with the TypeScript compiler API and fails on any
+  undocumented token or on a version mismatch between `package.json`, `CHANGELOG.md`,
+  `CITATION.cff` and the README install pin. It also builds the package and runs the
+  README quickstart. `tests/docsCoverageGate.test.ts` pins the gate two-sided, and it
+  runs as part of `npm test`.
+- `CITATION.cff` and `CONTRIBUTING.md`.
+
+### Fixed
+- The README had the signature of `resolveWork` / `resolveWorkDetailed` wrong: it gave
+  `(doi, creds?)`, but the real signature is `(doi, providers?, creds?)`. The install
+  example pinned `v0.1.1` instead of the current tag.
+- Source comments no longer point at design documents, scripts and file paths that are
+  not part of this repository. Comments that named environment variables the library
+  never reads have been corrected.
+
 ## 0.1.2 — 2026-09-11
 
 **No behavioural change.** A documentation and naming release, tagged so that

@@ -1,4 +1,5 @@
-// NOTE: no /g flag — would make lastIndex stateful across calls (LESSONS.md #15).
+// NOTE: no /g flag — a global regex keeps lastIndex between .test() calls, which
+// makes results depend on call history.
 const REPLICATION_PHRASES = [
   /\breplication of\b/i,
   /\bwe replicated\b/i,

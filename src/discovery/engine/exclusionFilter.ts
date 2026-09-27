@@ -5,8 +5,7 @@
  *
  * Patterns are applied AFTER the API search returns, not as part of the OR-bundle —
  * no public search API supports negative regex search reliably.
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3.3
+
  */
 
 import yaml from 'js-yaml';

@@ -1,8 +1,7 @@
 /**
  * Candidate normalizer — converts raw API candidates into a stable internal shape,
  * normalizes the DOI, and prepares for ranker scoring.
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3
+
  */
 
 import type { NormalizedCandidate, RawCandidate } from '../types.js';

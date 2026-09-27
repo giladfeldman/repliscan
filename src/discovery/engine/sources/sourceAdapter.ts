@@ -5,8 +5,7 @@
  * upstream source (OpenAlex, Crossref, Semantic Scholar, etc.) and stream
  * candidates back page by page. The runner doesn't care which source it's
  * talking to — same shape, same async-generator contract.
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3.7
+
  */
 
 import type {

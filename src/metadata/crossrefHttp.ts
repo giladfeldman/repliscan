@@ -1,14 +1,8 @@
 /**
  * Self-contained polite-pool Crossref GET helper for repliscan's metadata layer.
  *
- * Copied from CG apps/worker/src/services/crossref.ts (getCrossrefUserAgent +
- * crossrefGet) during Wave 2 repliscan extraction. The worker keeps its own copy
- * intact (it serves the full worker including non-replication plugins). Only the
- * replication metadata layer uses this copy. The @scimeto/shared formatError
- * dependency from crossref.ts is NOT copied here — crossrefGet itself does not
- * use it (only validateDOI does). The mailto is a parameter (no process.env read).
- *
- * This is a deliberate, scoped duplication parallel to FLAGGED DECISION POINT 2.
+ * Internal (not exported from the package entry). Used by the Crossref metadata
+ * provider. The mailto is a parameter; nothing here reads process.env.
  */
 
 import axios, { type AxiosRequestConfig, type AxiosResponse } from 'axios';

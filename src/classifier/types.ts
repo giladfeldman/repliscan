@@ -1,5 +1,3 @@
-// apps/worker/src/services/replication/types.ts
-
 export type ReplicationOutcome = 'successful' | 'failed' | 'mixed' | 'unknown';
 export type ReplicationConfidence = 'high' | 'medium' | 'low';
 export type MetadataProviderName =

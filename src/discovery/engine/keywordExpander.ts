@@ -8,8 +8,7 @@
  *   pre-?registered                    → optional preceding char (zero/one)
  *   (close|high-powered) replication   → alternation groups
  *   "exact phrase"                     → quoted literal, no expansion
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3
+
  */
 
 import yaml from 'js-yaml';

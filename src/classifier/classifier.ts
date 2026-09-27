@@ -1,4 +1,3 @@
-// apps/worker/src/services/replication/classifier.ts
 import type { ReplicationClassifierInput, ReverseExtractorResult, ReplicationFinding } from './types.js';
 import { hasReplicationPhrase } from './phraseDetection.js';
 import { extractTargets } from './targetExtraction.js';

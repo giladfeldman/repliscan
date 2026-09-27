@@ -1,4 +1,3 @@
-// apps/worker/src/services/replication/openAlexClient.ts
 import axios from 'axios';
 import type { OpenAlexWork } from '../classifier/types.js';
 import { normalizeDoi } from '../util/normalizeDoi.js';
@@ -55,7 +54,7 @@ function venueName(work: any): string {
 async function batchGetWorks(ids: string[], creds?: MetadataCredentials): Promise<any[]> {
   if (ids.length === 0) return [];
   // OpenAlex filter URL caps at ~50 IDs per call. Paginate to recover full reference lists
-  // (heavily-referenced papers were silently dropped before the 2026-05-06 hackathon fix).
+  // (before this, heavily-referenced papers silently lost most of their references).
   const HARD_CAP = 400; // belt-and-suspenders: refuse pathological 1000+-ref papers
   const ALL = ids.slice(0, HARD_CAP);
   if (ids.length > HARD_CAP) {

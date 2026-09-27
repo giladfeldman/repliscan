@@ -3,16 +3,9 @@
  *
  * runDiscovery is library-pure: it never imports a database client. When the
  * caller wants candidates + progress persisted, it passes a RunPersistence
- * implementation; when it doesn't (CLI, tests, the parity oracle), it passes
- * null and supplies `fileWriters` instead.
- *
- * The four methods mirror, exactly, the four DB functions the runner called
- * before the Wave 2 extraction (candidateWriter.upsertCandidates /
- * updateClassifierResult, checkpointStore.updateProgress / checkPauseSignal).
- * The Scimeto worker implements this interface in discoveryJobRunner.ts,
- * closing over its Neon client. The method signatures intentionally drop the
- * leading `db` argument the worker functions take — the implementation closes
- * over `db` instead.
+ * implementation; when it doesn't (scripts, tests), it passes null and
+ * supplies `fileWriters` instead. An implementation closes over its own
+ * database client, so no method takes a `db` argument.
  */
 import type {
   ClassifierStatus,

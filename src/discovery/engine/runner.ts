@@ -7,10 +7,8 @@
  * and checkpoints after every page.
  *
  * Honors pause/cancel signals between API calls so an in-flight HTTP request
- * always finishes cleanly (matches checkpointStore's transactional model —
- * one page = one safely resumable unit).
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §4
+ * always finishes cleanly (one page = one safely resumable unit).
+
  */
 
 import type {
@@ -61,7 +59,7 @@ export interface RunDiscoveryArgs {
   adapters: Partial<Record<SourceId, SourceAdapter>>;
   specDir: string;
   /** When provided, the runner persists progress + candidates via this seam.
-   *  CLI / tests / the parity oracle pass null. */
+   *  Callers without a database pass null. */
   persistence: RunPersistence | null;
   /** When persistence is null, fileWriters MUST be provided to capture output. */
   fileWriters?: FileWriters;

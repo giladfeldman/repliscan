@@ -1,7 +1,5 @@
 # ranking-weights.yaml — replication discovery
 # Pure-deterministic search_score formula. Same candidate, same spec → same score.
-#
-# Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3.5
 version: 1
 
 formula:

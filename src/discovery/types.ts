@@ -6,9 +6,7 @@
  *     → expanded keywords (per-source query strings)
  *     → raw API candidates
  *     → normalized + deduped candidates
- *     → classified candidates persisted to Postgres
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3, §2
+ *     → classified candidates, persisted by the caller (see RunPersistence)
  */
 
 export type SourceId =

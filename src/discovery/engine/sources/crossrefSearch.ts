@@ -5,13 +5,12 @@
  *   - One ?query.bibliographic="p1" OR "p2" OR ... per source per run
  *   - Local regex pass for per-keyword/per-field attribution
  *   - Cursor pagination (deep paging via &cursor=*)
- *   - Polite pool via User-Agent: ".../1.0 (mailto:CROSSREF_EMAIL)"
+ *   - Polite pool via User-Agent: ".../1.0 (mailto:<the mailto option>)"
  *
- * Crossref doesn't ship abstracts on most records — when absent, the
+ * The query filters on has-abstract:true; if a record still lacks one, the
  * candidate's abstract field is undefined and the runner's text-attribution
  * step works on title alone for that record.
- *
- * Spec: docs/superpowers/specs/2026-05-04-replication-discovery-design.md §3.7
+
  */
 
 import type {
