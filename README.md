@@ -71,7 +71,7 @@ not published to the npm registry. Pin a tag directly:
 ```jsonc
 // package.json
 "dependencies": {
-  "repliscan": "github:giladfeldman/repliscan#v0.1.2"
+  "repliscan": "github:giladfeldman/repliscan#v0.1.3"
 }
 ```
 
