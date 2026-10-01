@@ -12,3 +12,9 @@ for (const f of ['search-keywords.yaml', 'exclusion-patterns.yaml', 'ranking-wei
   copyFileSync(join(srcDir, f), join(distDir, f));
   console.log('copied', f);
 }
+
+// The bundled FReD snapshot (data/flora-replications.json) is read at run time by fred/bundled.ts.
+const dataDist = join(root, 'dist', 'data');
+mkdirSync(dataDist, { recursive: true });
+copyFileSync(join(root, 'data', 'flora-replications.json'), join(dataDist, 'flora-replications.json'));
+console.log('copied flora-replications.json');

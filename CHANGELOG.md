@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.2.0 — 2026-10-01
+
+**The lookup pipelines move into the library; behaviour is unchanged.** Everything below was
+extracted from the application that used it, and its output is pinned byte for byte against a
+golden file recorded from the original implementation before the move
+(`tests/pipeline/parity/`). A difference from that golden file is a bug, not an improvement.
+
+### Added
+- **FReD lookup** (`checkFloraReplications`, `parseAndIndexFloraCsv`, `mapFloraOutcome`,
+  `aggregateOutcome`, `floraHitToFindings`, `loadBundledFred`) and the bundled FReD snapshot
+  (`dist/data/flora-replications.json`, CC-BY-4.0, credited in `NOTICE`, `CITATION.cff` and the README).
+- **Forward lookup** `findReplicationsForDoi`, **reverse lookup** `extractReplication`, the **standalone
+  record extractor** `extractReplicationStandalone` with `recordsToCsv`, and `dedupFindings`.
+- **Verifier** helpers `createLlmVerifier`, `buildVerifierPrompt`, `parseVerifierResponse`,
+  `verificationFailure`, with the verbatim-quote guard. The library ships no AI provider and no keys;
+  the host supplies the model call.
+- **Ports**: `CachePort`, `VerifierPort`, `MetadataCredentials`. The new modules never read `process.env`.
+- **Command line**: `repliscan fred | replications | targets | extract --doi <doi>`, JSON on stdout,
+  `--stdin` for one JSON request. `fred` works fully offline.
+- `normalizeLookupDoi`, `isMalformedDoi`, `isShortFormDoi`, `libraryVersion`.
+- `NOTICE` (FReD attribution).
+
+### Known behaviours carried over unchanged (tracked, not fixed here)
+- `enableCrossrefAuthorYearFallback` cannot produce a finding: the confidence it assigns is always `low`
+  and `low` is discarded. It is off by default.
+- `normalizeLookupDoi` and `normalizeDoi` are two different functions (the lookup one also strips a trailing
+  `,` `;` `)` `]`).
+- The reverse lookup resolves metadata with default credentials.
+- The `license` field inside the bundled snapshot and parsed FReD databases says `MIT`; the data is CC-BY-4.0.
+- The metadata providers still fall back to a hard-coded polite-pool contact address when none is supplied.
+
+
 ## 0.1.3 — 2026-09-30
 
 **No behavioural change.** Documentation, tooling and source comments only.

@@ -1,0 +1,3102 @@
+{
+  "csv": "inputDoi,normalizedDoi,status,replicationDoi,replicationTitle,replicationAuthors,replicationVenue,replicationYear,originalDoi,originalTitle,originalAuthors,originalVenue,originalYear,originalReferenceExtracted,justificationPhrase,outcome,outcomePhrase,confidence,matchMethod,apiSourcesQueried,metadataProviderReports,rawSourceSnippets,ruleIdsTriggered,signalProvenance,modelVerifier,verifierVersion,verifierReason,timestamp,codeVersion,unresolvedReason\n10.5555/rep.failed,10.5555/rep.failed,accepted,10.5555/rep.failed,A direct replication of Smith et al. (2010) on anchoring,A. Replicator,Replication Reports,2019,10.5555/orig.101,Original study 101,Smith et al.,Journal of Synthetic Psychology,2010,Smith et al. (2010),A direct replication of Smith et al. (2010) on anchoring.,failed,We failed to replicate the original effect; the replication found no evidence for anchoring.,high,metadata_reference_backref,openalex | crossref,\"{\"\"provider\"\":\"\"openalex\"\",\"\"status\"\":\"\"found\"\"} | {\"\"provider\"\":\"\"crossref\"\",\"\"status\"\":\"\"found\"\"}\",A direct replication of Smith et al. (2010) on anchoring. | We failed to replicate the original effect; the replication found no evidence for anchoring.,HARD_BACKREF_CONFIRMED | REPLICATION_PHRASE_TITLE | REPLICATION_PHRASE_ABSTRACT | OUTCOME_PHRASE_EXTRACTED,back-ref-confirmed | phrase-in-title | phrase-in-abstract | outcome-phrase-extracted,,,,2026-05-04T09:00:00.000Z,parity-build,\n10.5555/rep.ambiguous,10.5555/rep.ambiguous,ambiguous,10.5555/rep.ambiguous,A replication of Brown (2011),C. Replicator,Replication Reports,2021,10.5555/orig.104,Original study 104,Brown et al.,Journal of Synthetic Psychology,2011,Brown (2011),A replication of Brown (2011).,unknown,,medium,metadata_reference_backref,openalex | crossref,\"{\"\"provider\"\":\"\"openalex\"\",\"\"status\"\":\"\"found\"\"} | {\"\"provider\"\":\"\"crossref\"\",\"\"status\"\":\"\"found\"\"}\",A replication of Brown (2011).,HARD_BACKREF_CONFIRMED | REPLICATION_PHRASE_TITLE | REPLICATION_PHRASE_ABSTRACT | AMBIGUOUS_TARGET | UNKNOWN_OUTCOME,back-ref-confirmed | phrase-in-title | phrase-in-abstract | ambiguous-target,,,,2026-05-04T09:00:00.000Z,parity-build,multiple_or_ambiguous_targets\n10.5555/missing,10.5555/missing,needs_more_metadata,10.5555/missing,,,,,,,,,,,,,,,,openalex | crossref,\"{\"\"provider\"\":\"\"openalex\"\",\"\"status\"\":\"\"not_found\"\"} | {\"\"provider\"\":\"\"crossref\"\",\"\"status\"\":\"\"not_found\"\"}\",,,,,,,2026-05-04T09:00:00.000Z,parity-build,doi_not_found_in_metadata_providers\n10.5555/rep.unknown,10.5555/rep.unknown,llm_disagreed,10.5555/rep.unknown,A replication of Gray (2014),H. Replicator,Replication Reports,2023,10.5555/orig.109,Original study 109,Gray et al.,Journal of Synthetic Psychology,2014,Gray (2014),A replication of Gray (2014).,unknown,,high,metadata_reference_backref,openalex | crossref,\"{\"\"provider\"\":\"\"openalex\"\",\"\"status\"\":\"\"found\"\"} | {\"\"provider\"\":\"\"crossref\"\",\"\"status\"\":\"\"found\"\"}\",A replication of Gray (2014).,HARD_BACKREF_CONFIRMED | REPLICATION_PHRASE_TITLE | REPLICATION_PHRASE_ABSTRACT | UNKNOWN_OUTCOME,back-ref-confirmed | phrase-in-title | phrase-in-abstract | LLM-verified | LLM-disagreed,canned-model,<host-version>,llm: parse - no JSON object found in response,2026-05-04T09:00:00.000Z,parity-build,llm_verifier_disagreed\n",
+  "csvEmpty": "inputDoi,normalizedDoi,status,replicationDoi,replicationTitle,replicationAuthors,replicationVenue,replicationYear,originalDoi,originalTitle,originalAuthors,originalVenue,originalYear,originalReferenceExtracted,justificationPhrase,outcome,outcomePhrase,confidence,matchMethod,apiSourcesQueried,metadataProviderReports,rawSourceSnippets,ruleIdsTriggered,signalProvenance,modelVerifier,verifierVersion,verifierReason,timestamp,codeVersion,unresolvedReason\n",
+  "dedup": [
+    {
+      "confidence": "high",
+      "evidence": [
+        "e1",
+        "e2"
+      ],
+      "justificationPhrase": "j1",
+      "originalDoi": "10.5555/orig.1",
+      "originalReferenceExtracted": "X (2010)",
+      "outcome": "mixed",
+      "outcomePhrase": "partly",
+      "replicationDoi": "10.5555/r",
+      "signalProvenance": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "confidence": "high",
+      "evidence": [],
+      "justificationPhrase": "",
+      "originalDoi": "10.5555/orig.1",
+      "originalReferenceExtracted": "X (2010)",
+      "outcome": "failed",
+      "outcomePhrase": "late phrase",
+      "replicationDoi": "10.5555/other",
+      "signalProvenance": []
+    },
+    {
+      "confidence": "low",
+      "evidence": [],
+      "justificationPhrase": "",
+      "originalDoi": "10.5555/orig.1",
+      "originalReferenceExtracted": "X (2010)",
+      "outcome": "unknown",
+      "outcomePhrase": "",
+      "replicationDoi": "na",
+      "signalProvenance": [
+        "c"
+      ]
+    },
+    {
+      "confidence": "low",
+      "evidence": [],
+      "justificationPhrase": "",
+      "originalDoi": "10.5555/orig.1",
+      "originalReferenceExtracted": "X (2010)",
+      "outcome": "unknown",
+      "outcomePhrase": "",
+      "replicationDoi": "",
+      "signalProvenance": [
+        "d"
+      ]
+    }
+  ],
+  "forward": {
+    "aborted": {
+      "originalDoi": "10.5555/target.abort",
+      "targets": [
+        {
+          "confidence": "high",
+          "evidence": [
+            "only partly replicated"
+          ],
+          "justificationPhrase": "A replication of Target et al. (2010)",
+          "originalAuthors": "Target and Co.",
+          "originalDoi": "10.5555/target.abort",
+          "originalReferenceExtracted": "Target original study",
+          "originalTitle": "Target original study",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "mixed",
+          "outcomePhrase": "only partly replicated",
+          "replicationAuthors": "Q. R.",
+          "replicationDoi": "10.5555/cand.long",
+          "replicationTitle": "A replication of Target et al. (2010)",
+          "replicationVenue": "J",
+          "replicationYear": 2019,
+          "signalProvenance": [
+            "fred"
+          ]
+        },
+        {
+          "confidence": "high",
+          "evidence": [],
+          "justificationPhrase": "FReD only",
+          "originalAuthors": "Target and Co.",
+          "originalDoi": "10.5555/target.abort",
+          "originalReferenceExtracted": "Target original study",
+          "originalTitle": "Target original study",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "successful",
+          "outcomePhrase": "",
+          "replicationAuthors": "S. T.",
+          "replicationDoi": "10.5555/fred.only",
+          "replicationTitle": "FReD only",
+          "replicationVenue": "J",
+          "replicationYear": 2012,
+          "signalProvenance": [
+            "fred"
+          ]
+        },
+        {
+          "confidence": "high",
+          "evidence": [],
+          "justificationPhrase": "No-doi FReD entry",
+          "originalAuthors": "Target and Co.",
+          "originalDoi": "10.5555/target.abort",
+          "originalReferenceExtracted": "Target original study",
+          "originalTitle": "Target original study",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "unknown",
+          "outcomePhrase": "",
+          "replicationAuthors": "",
+          "replicationDoi": "",
+          "replicationTitle": "No-doi FReD entry",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "fred"
+          ]
+        }
+      ]
+    },
+    "callerAuthorYear": {
+      "originalDoi": "10.5555/target.main",
+      "targets": [
+        {
+          "confidence": "medium",
+          "evidence": [
+            "We replicated Target et al. (2010) and failed to replicate the original effect."
+          ],
+          "justificationPhrase": "We replicated Target et al. (2010) and failed to replicate the original effect.",
+          "originalAuthors": "Target and Co.",
+          "originalDoi": "10.5555/target.main",
+          "originalReferenceExtracted": "Target et al. (2010)",
+          "originalTitle": "Target original study",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "failed",
+          "outcomePhrase": "We replicated Target et al. (2010) and failed to replicate the original effect.",
+          "replicationAuthors": "",
+          "replicationDoi": "10.5555/cand.thin",
+          "replicationTitle": "Enriched 10.5555/cand.thin",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "back-ref-confirmed",
+            "phrase-in-abstract",
+            "outcome-phrase-extracted",
+            "metadata-enriched"
+          ]
+        },
+        {
+          "confidence": "high",
+          "evidence": [
+            "A replication of Target et al. (2010).",
+            "We conducted a replication of Target et al. (2010) and the effect was not replicated."
+          ],
+          "justificationPhrase": "A replication of Target et al. (2010).",
+          "originalAuthors": "Target and Co.",
+          "originalDoi": "10.5555/target.main",
+          "originalReferenceExtracted": "Target et al. (2010)",
+          "originalTitle": "Target original study",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "failed",
+          "outcomePhrase": "We conducted a replication of Target et al. (2010) and the effect was not replicated.",
+          "replicationAuthors": "",
+          "replicationDoi": "10.5555/cand.long",
+          "replicationTitle": "A replication of Target et al. (2010)",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "back-ref-confirmed",
+            "phrase-in-title",
+            "phrase-in-abstract",
+            "outcome-phrase-extracted"
+          ]
+        }
+      ]
+    },
+    "emptyCandidates": {
+      "originalDoi": "10.5555/target.empty",
+      "targets": []
+    },
+    "fredOnlyFromCsv": {
+      "originalDoi": "10.5555/orig.1",
+      "targets": [
+        {
+          "confidence": "high",
+          "evidence": [
+            "The effect \"did not\" replicate."
+          ],
+          "justificationPhrase": "Replication one",
+          "originalAuthors": "",
+          "originalDoi": "10.5555/orig.1",
+          "originalReferenceExtracted": "",
+          "originalTitle": "",
+          "originalVenue": "",
+          "originalYear": null,
+          "outcome": "failed",
+          "outcomePhrase": "The effect \"did not\" replicate.",
+          "replicationAuthors": "Cy Gamma",
+          "replicationDoi": "10.5555/fred.r1",
+          "replicationTitle": "Replication one",
+          "replicationVenue": "Journal B",
+          "replicationYear": 2010,
+          "signalProvenance": [
+            "fred"
+          ]
+        },
+        {
+          "confidence": "high",
+          "evidence": [
+            "Mixed support"
+          ],
+          "justificationPhrase": "Replication two",
+          "originalAuthors": "",
+          "originalDoi": "10.5555/orig.1",
+          "originalReferenceExtracted": "",
+          "originalTitle": "",
+          "originalVenue": "",
+          "originalYear": null,
+          "outcome": "mixed",
+          "outcomePhrase": "Mixed support",
+          "replicationAuthors": "Plain Author",
+          "replicationDoi": "10.5555/fred.r2",
+          "replicationTitle": "Replication two",
+          "replicationVenue": "Journal C",
+          "replicationYear": null,
+          "signalProvenance": [
+            "fred"
+          ]
+        }
+      ]
+    },
+    "invalid": {
+      "originalDoi": "not-a-doi",
+      "targets": []
+    },
+    "mainNoFred": {
+      "originalDoi": "10.5555/target.main",
+      "targets": [
+        {
+          "confidence": "medium",
+          "evidence": [
+            "We replicated Target et al. (2010) and failed to replicate the original effect."
+          ],
+          "justificationPhrase": "We replicated Target et al. (2010) and failed to replicate the original effect.",
+          "originalAuthors": "Target and Co.",
+          "originalDoi": "10.5555/target.main",
+          "originalReferenceExtracted": "Target et al. (2010)",
+          "originalTitle": "Target original study",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "failed",
+          "outcomePhrase": "We replicated Target et al. (2010) and failed to replicate the original effect.",
+          "replicationAuthors": "",
+          "replicationDoi": "10.5555/cand.thin",
+          "replicationTitle": "Enriched 10.5555/cand.thin",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "back-ref-confirmed",
+            "phrase-in-abstract",
+            "outcome-phrase-extracted",
+            "metadata-enriched"
+          ]
+        },
+        {
+          "confidence": "high",
+          "evidence": [
+            "A replication of Target et al. (2010).",
+            "We conducted a replication of Target et al. (2010) and the effect was not replicated."
+          ],
+          "justificationPhrase": "A replication of Target et al. (2010).",
+          "originalAuthors": "Target and Co.",
+          "originalDoi": "10.5555/target.main",
+          "originalReferenceExtracted": "Target et al. (2010)",
+          "originalTitle": "Target original study",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "failed",
+          "outcomePhrase": "We conducted a replication of Target et al. (2010) and the effect was not replicated.",
+          "replicationAuthors": "",
+          "replicationDoi": "10.5555/cand.long",
+          "replicationTitle": "A replication of Target et al. (2010)",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "back-ref-confirmed",
+            "phrase-in-title",
+            "phrase-in-abstract",
+            "outcome-phrase-extracted"
+          ]
+        }
+      ]
+    },
+    "mainWithFred": {
+      "originalDoi": "10.5555/target.fred",
+      "targets": [
+        {
+          "confidence": "high",
+          "evidence": [
+            "only partly replicated",
+            "A replication of Target et al. (2010).",
+            "We conducted a replication of Target et al. (2010) and the effect was not replicated."
+          ],
+          "justificationPhrase": "A replication of Target et al. (2010)",
+          "originalAuthors": "Target and Co.",
+          "originalDoi": "10.5555/target.fred",
+          "originalReferenceExtracted": "Target original study",
+          "originalTitle": "Target original study",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "failed",
+          "outcomePhrase": "We conducted a replication of Target et al. (2010) and the effect was not replicated.",
+          "replicationAuthors": "Q. R.",
+          "replicationDoi": "10.5555/cand.long",
+          "replicationTitle": "A replication of Target et al. (2010)",
+          "replicationVenue": "J",
+          "replicationYear": 2019,
+          "signalProvenance": [
+            "fred",
+            "back-ref-confirmed",
+            "phrase-in-title",
+            "phrase-in-abstract",
+            "outcome-phrase-extracted"
+          ]
+        },
+        {
+          "confidence": "high",
+          "evidence": [],
+          "justificationPhrase": "FReD only",
+          "originalAuthors": "Target and Co.",
+          "originalDoi": "10.5555/target.fred",
+          "originalReferenceExtracted": "Target original study",
+          "originalTitle": "Target original study",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "successful",
+          "outcomePhrase": "",
+          "replicationAuthors": "S. T.",
+          "replicationDoi": "10.5555/fred.only",
+          "replicationTitle": "FReD only",
+          "replicationVenue": "J",
+          "replicationYear": 2012,
+          "signalProvenance": [
+            "fred"
+          ]
+        },
+        {
+          "confidence": "medium",
+          "evidence": [
+            "We replicated Target et al. (2010) and failed to replicate the original effect."
+          ],
+          "justificationPhrase": "We replicated Target et al. (2010) and failed to replicate the original effect.",
+          "originalAuthors": "Target and Co.",
+          "originalDoi": "10.5555/target.fred",
+          "originalReferenceExtracted": "Target et al. (2010)",
+          "originalTitle": "Target original study",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "failed",
+          "outcomePhrase": "We replicated Target et al. (2010) and failed to replicate the original effect.",
+          "replicationAuthors": "",
+          "replicationDoi": "10.5555/cand.thin",
+          "replicationTitle": "Enriched 10.5555/cand.thin",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "back-ref-confirmed",
+            "phrase-in-abstract",
+            "outcome-phrase-extracted",
+            "metadata-enriched"
+          ]
+        },
+        {
+          "confidence": "high",
+          "evidence": [],
+          "justificationPhrase": "No-doi FReD entry",
+          "originalAuthors": "Target and Co.",
+          "originalDoi": "10.5555/target.fred",
+          "originalReferenceExtracted": "Target original study",
+          "originalTitle": "Target original study",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "unknown",
+          "outcomePhrase": "",
+          "replicationAuthors": "",
+          "replicationDoi": "",
+          "replicationTitle": "No-doi FReD entry",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "fred"
+          ]
+        }
+      ]
+    },
+    "noTarget": {
+      "originalDoi": "10.5555/target.none",
+      "targets": []
+    },
+    "shortDoi": {
+      "originalDoi": "10/abc",
+      "targets": []
+    }
+  },
+  "forwardCache": [
+    [
+      "get",
+      "10.5555/target.none",
+      "forward"
+    ],
+    [
+      "put",
+      "10.5555/target.none",
+      "forward"
+    ],
+    [
+      "get",
+      "10.5555/target.empty",
+      "forward"
+    ],
+    [
+      "put",
+      "10.5555/target.empty",
+      "forward"
+    ],
+    [
+      "get",
+      "10.5555/orig.1",
+      "forward"
+    ],
+    [
+      "put",
+      "10.5555/orig.1",
+      "forward"
+    ],
+    [
+      "get",
+      "10.5555/target.main",
+      "forward"
+    ],
+    [
+      "put",
+      "10.5555/target.main",
+      "forward"
+    ],
+    [
+      "get",
+      "10.5555/target.fred",
+      "forward"
+    ],
+    [
+      "put",
+      "10.5555/target.fred",
+      "forward"
+    ],
+    [
+      "get",
+      "10.5555/target.main",
+      "forward"
+    ],
+    [
+      "get",
+      "10.5555/target.abort",
+      "forward"
+    ]
+  ],
+  "fredAggregate": [
+    "unknown",
+    "successful",
+    "partial",
+    "unknown",
+    "failed"
+  ],
+  "fredBundled": {
+    "sha256": "3c7d15bd87d610ccec9056d22a433b00e6a0dc01b13d956c5bc270fd4da0cf6c",
+    "totalEntries": 1182,
+    "totalOriginals": 1081
+  },
+  "fredDb": {
+    "byDoi": {
+      "10.5555/orig.1": {
+        "authors": "Ada Alpha et al.",
+        "journal": "Journal A",
+        "replications": [
+          {
+            "authors": "Cy Gamma",
+            "doi": "10.5555/fred.r1",
+            "journal": "Journal B",
+            "outcome": "failed",
+            "outcomeQuote": "The effect \"did not\" replicate.",
+            "source": "Many Labs",
+            "title": "Replication one",
+            "type": "direct",
+            "year": 2010
+          },
+          {
+            "authors": "Plain Author",
+            "doi": "10.5555/fred.r2",
+            "journal": "Journal C",
+            "outcome": "mixed",
+            "outcomeQuote": "Mixed support",
+            "source": "Lab",
+            "title": "Replication two",
+            "type": "conceptual",
+            "year": null
+          }
+        ],
+        "title": "Original, with a comma",
+        "year": 2001
+      },
+      "10.5555/orig.2": {
+        "authors": "",
+        "journal": "Journal D",
+        "replications": [
+          {
+            "authors": "",
+            "doi": "10.5555/fred.r3",
+            "journal": "",
+            "outcome": "successful",
+            "outcomeQuote": "",
+            "source": "",
+            "title": "Replication three",
+            "type": "direct",
+            "year": 2015
+          }
+        ],
+        "title": "Second original",
+        "year": null
+      }
+    },
+    "lastUpdated": "<today>",
+    "license": "MIT",
+    "source": "FORRT FReD (FLoRA)",
+    "totalEntries": 3,
+    "totalOriginals": 2,
+    "version": "1.0.0"
+  },
+  "fredHits": [
+    {
+      "code": "REPLICATION_FOUND",
+      "description": "2 replication study/studies found (failed) - FReD curated database",
+      "location": "10.5555/orig.1",
+      "metadata": {
+        "determinationMethod": "FReD curated dataset",
+        "doi": "10.5555/orig.1",
+        "floraDataVersion": "1.0.0",
+        "replicationCount": 2,
+        "replicationDOIs": [
+          "10.5555/fred.r1",
+          "10.5555/fred.r2"
+        ],
+        "replicationDetails": [
+          {
+            "authors": "Cy Gamma",
+            "doi": "10.5555/fred.r1",
+            "journal": "Journal B",
+            "outcome": "failed",
+            "outcomeQuote": "The effect \"did not\" replicate.",
+            "outcomeType": "failed",
+            "projectSource": "Many Labs",
+            "title": "Replication one",
+            "type": "direct",
+            "year": 2010
+          },
+          {
+            "authors": "Plain Author",
+            "doi": "10.5555/fred.r2",
+            "journal": "Journal C",
+            "outcome": "mixed",
+            "outcomeQuote": "Mixed support",
+            "outcomeType": "partial",
+            "projectSource": "Lab",
+            "title": "Replication two",
+            "type": "conceptual"
+          }
+        ],
+        "replicationType": "failed",
+        "source": "FReD"
+      },
+      "severity": "warning",
+      "suggestion": "Review the replication studies to understand reproduction outcomes",
+      "type": "replication-status"
+    },
+    {
+      "code": "REPLICATION_FOUND",
+      "description": "2 replication study/studies found (failed) - FReD curated database",
+      "location": "https://doi.org/10.5555/ORIG.1",
+      "metadata": {
+        "determinationMethod": "FReD curated dataset",
+        "doi": "https://doi.org/10.5555/ORIG.1",
+        "floraDataVersion": "1.0.0",
+        "replicationCount": 2,
+        "replicationDOIs": [
+          "10.5555/fred.r1",
+          "10.5555/fred.r2"
+        ],
+        "replicationDetails": [
+          {
+            "authors": "Cy Gamma",
+            "doi": "10.5555/fred.r1",
+            "journal": "Journal B",
+            "outcome": "failed",
+            "outcomeQuote": "The effect \"did not\" replicate.",
+            "outcomeType": "failed",
+            "projectSource": "Many Labs",
+            "title": "Replication one",
+            "type": "direct",
+            "year": 2010
+          },
+          {
+            "authors": "Plain Author",
+            "doi": "10.5555/fred.r2",
+            "journal": "Journal C",
+            "outcome": "mixed",
+            "outcomeQuote": "Mixed support",
+            "outcomeType": "partial",
+            "projectSource": "Lab",
+            "title": "Replication two",
+            "type": "conceptual"
+          }
+        ],
+        "replicationType": "failed",
+        "source": "FReD"
+      },
+      "severity": "warning",
+      "suggestion": "Review the replication studies to understand reproduction outcomes",
+      "type": "replication-status"
+    },
+    {
+      "code": "REPLICATION_FOUND",
+      "description": "1 replication study/studies found (successful) - FReD curated database",
+      "location": "doi:10.5555/orig.2",
+      "metadata": {
+        "determinationMethod": "FReD curated dataset",
+        "doi": "doi:10.5555/orig.2",
+        "floraDataVersion": "1.0.0",
+        "replicationCount": 1,
+        "replicationDOIs": [
+          "10.5555/fred.r3"
+        ],
+        "replicationDetails": [
+          {
+            "doi": "10.5555/fred.r3",
+            "outcome": "successful",
+            "outcomeType": "successful",
+            "title": "Replication three",
+            "type": "direct",
+            "year": 2015
+          }
+        ],
+        "replicationType": "successful",
+        "source": "FReD"
+      },
+      "severity": "info",
+      "suggestion": "Review the replication studies to understand reproduction outcomes",
+      "type": "replication-status"
+    },
+    null,
+    null,
+    null
+  ],
+  "fredOutcomes": [
+    {
+      "severity": "info",
+      "type": "successful"
+    },
+    {
+      "severity": "warning",
+      "type": "failed"
+    },
+    {
+      "severity": "warning",
+      "type": "partial"
+    },
+    {
+      "severity": "warning",
+      "type": "partial"
+    },
+    {
+      "severity": "warning",
+      "type": "partial"
+    },
+    {
+      "severity": "warning",
+      "type": "partial"
+    },
+    {
+      "severity": "info",
+      "type": "unknown"
+    },
+    {
+      "severity": "info",
+      "type": "unknown"
+    }
+  ],
+  "ioCalls": [
+    {
+      "args": [
+        "10.5555/rep.failed"
+      ],
+      "fn": "resolveWork"
+    },
+    {
+      "args": [
+        "10.5555/rep.success"
+      ],
+      "fn": "resolveWork"
+    },
+    {
+      "args": [
+        "10.5555/rep.ambiguous"
+      ],
+      "fn": "resolveWork"
+    },
+    {
+      "args": [
+        "10.5555/rep.unknown"
+      ],
+      "fn": "resolveWork"
+    },
+    {
+      "args": [
+        "10.5555/not.replication"
+      ],
+      "fn": "resolveWork"
+    },
+    {
+      "args": [
+        "10.5555/missing"
+      ],
+      "fn": "resolveWork"
+    },
+    {
+      "args": [
+        "10.5555/target.none",
+        50,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "getCitingWorks"
+    },
+    {
+      "args": [
+        "10.5555/target.empty",
+        50,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "getCitingWorks"
+    },
+    {
+      "args": [
+        "10.5555/orig.1",
+        50,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "getCitingWorks"
+    },
+    {
+      "args": [
+        "10.5555/target.main",
+        50,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "getCitingWorks"
+    },
+    {
+      "args": [
+        "10.5555/cand.thin",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/enrich.throws",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/target.fred",
+        50,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "getCitingWorks"
+    },
+    {
+      "args": [
+        "10.5555/cand.thin",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/enrich.throws",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/target.abort",
+        50,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "getCitingWorks"
+    },
+    {
+      "args": [
+        "10.5555/rep.failed",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.success",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.ambiguous",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.norefs",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.noresolve",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/not.replication",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/missing",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.unknown",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.failed",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.fallback",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.fallback",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        {
+          "author": "Black",
+          "replicationTitle": "A replication of Black (2009)",
+          "sentence": "A replication of Black (2009).",
+          "year": 2009
+        },
+        {
+          "mailto": "parity@example.test"
+        }
+      ],
+      "fn": "resolveAuthorYearViaCrossref"
+    },
+    {
+      "args": [
+        "10.5555/rep.fallback",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        {
+          "author": "Black",
+          "replicationTitle": "A replication of Black (2009)",
+          "sentence": "A replication of Black (2009).",
+          "year": 2009
+        },
+        {
+          "mailto": "parity@example.test"
+        }
+      ],
+      "fn": "resolveAuthorYearViaCrossref"
+    },
+    {
+      "args": [
+        "10.5555/rep.fallback",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.unknown",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.unknown",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.unknown",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.unknown",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.unknown",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.unknown",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.unknown",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.unknown",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.unknown",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.ambiguous",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.norefs",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    },
+    {
+      "args": [
+        "10.5555/rep.failed",
+        null,
+        {
+          "openAlexApiKey": "oa-key",
+          "openAlexMailto": "parity@example.test",
+          "semanticScholarApiKey": "s2-key"
+        }
+      ],
+      "fn": "resolveWorkDetailed"
+    }
+  ],
+  "normalize": [
+    "10.5555/abc.1",
+    "10.5555/abc.1",
+    "10.5555/abc.1",
+    "10.5555/abc.1",
+    "",
+    "10.5555/abc.1",
+    "10.5555/abc(1"
+  ],
+  "reverse": {
+    "10.5555/missing": {
+      "isReplication": false,
+      "replicationDoi": "10.5555/missing",
+      "targets": []
+    },
+    "10.5555/not.replication": {
+      "isReplication": false,
+      "replicationDoi": "10.5555/not.replication",
+      "targets": []
+    },
+    "10.5555/rep.ambiguous": {
+      "isReplication": true,
+      "replicationDoi": "10.5555/rep.ambiguous",
+      "targets": [
+        {
+          "ambiguous": true,
+          "confidence": "medium",
+          "evidence": [
+            "A replication of Brown (2011)."
+          ],
+          "justificationPhrase": "A replication of Brown (2011).",
+          "originalAuthors": "Brown et al.",
+          "originalDoi": "10.5555/orig.104",
+          "originalReferenceExtracted": "Brown (2011)",
+          "originalTitle": "Original study 104",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2011,
+          "outcome": "unknown",
+          "outcomePhrase": "",
+          "replicationAuthors": "",
+          "replicationTitle": "A replication of Brown (2011)",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "back-ref-confirmed",
+            "phrase-in-title",
+            "phrase-in-abstract",
+            "ambiguous-target"
+          ]
+        }
+      ]
+    },
+    "10.5555/rep.failed": {
+      "isReplication": true,
+      "replicationDoi": "10.5555/rep.failed",
+      "targets": [
+        {
+          "confidence": "high",
+          "evidence": [
+            "A direct replication of Smith et al. (2010) on anchoring.",
+            "We failed to replicate the original effect; the replication found no evidence for anchoring."
+          ],
+          "justificationPhrase": "A direct replication of Smith et al. (2010) on anchoring.",
+          "originalAuthors": "Smith et al.",
+          "originalDoi": "10.5555/orig.101",
+          "originalReferenceExtracted": "Smith et al. (2010)",
+          "originalTitle": "Original study 101",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "failed",
+          "outcomePhrase": "We failed to replicate the original effect; the replication found no evidence for anchoring.",
+          "replicationAuthors": "",
+          "replicationTitle": "A direct replication of Smith et al. (2010) on anchoring",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "back-ref-confirmed",
+            "phrase-in-title",
+            "phrase-in-abstract",
+            "outcome-phrase-extracted"
+          ]
+        }
+      ]
+    },
+    "10.5555/rep.success": {
+      "isReplication": true,
+      "replicationDoi": "10.5555/rep.success",
+      "targets": [
+        {
+          "confidence": "high",
+          "evidence": [
+            "Replication of Jones and Lee (2012).",
+            "The original effect was successfully replicated in a larger sample."
+          ],
+          "justificationPhrase": "Replication of Jones and Lee (2012).",
+          "originalAuthors": "Jones et al.",
+          "originalDoi": "10.5555/orig.103",
+          "originalReferenceExtracted": "Jones and Lee (2012)",
+          "originalTitle": "Original study 103",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2012,
+          "outcome": "successful",
+          "outcomePhrase": "The original effect was successfully replicated in a larger sample.",
+          "replicationAuthors": "",
+          "replicationTitle": "Replication of Jones and Lee (2012)",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "back-ref-confirmed",
+            "phrase-in-title",
+            "phrase-in-abstract",
+            "outcome-phrase-extracted"
+          ]
+        }
+      ]
+    },
+    "10.5555/rep.unknown": {
+      "isReplication": true,
+      "replicationDoi": "10.5555/rep.unknown",
+      "targets": [
+        {
+          "confidence": "high",
+          "evidence": [
+            "A replication of Gray (2014)."
+          ],
+          "justificationPhrase": "A replication of Gray (2014).",
+          "originalAuthors": "Gray et al.",
+          "originalDoi": "10.5555/orig.109",
+          "originalReferenceExtracted": "Gray (2014)",
+          "originalTitle": "Original study 109",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2014,
+          "outcome": "unknown",
+          "outcomePhrase": "",
+          "replicationAuthors": "",
+          "replicationTitle": "A replication of Gray (2014)",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "back-ref-confirmed",
+            "phrase-in-title",
+            "phrase-in-abstract"
+          ]
+        }
+      ]
+    },
+    "<empty>": {
+      "isReplication": false,
+      "replicationDoi": "",
+      "targets": []
+    },
+    "https://doi.org/10.5555/REP.FAILED)": {
+      "isReplication": true,
+      "replicationDoi": "10.5555/rep.failed",
+      "targets": [
+        {
+          "confidence": "high",
+          "evidence": [
+            "A direct replication of Smith et al. (2010) on anchoring.",
+            "We failed to replicate the original effect; the replication found no evidence for anchoring."
+          ],
+          "justificationPhrase": "A direct replication of Smith et al. (2010) on anchoring.",
+          "originalAuthors": "Smith et al.",
+          "originalDoi": "10.5555/orig.101",
+          "originalReferenceExtracted": "Smith et al. (2010)",
+          "originalTitle": "Original study 101",
+          "originalVenue": "Journal of Synthetic Psychology",
+          "originalYear": 2010,
+          "outcome": "failed",
+          "outcomePhrase": "We failed to replicate the original effect; the replication found no evidence for anchoring.",
+          "replicationAuthors": "",
+          "replicationTitle": "A direct replication of Smith et al. (2010) on anchoring",
+          "replicationVenue": "",
+          "replicationYear": null,
+          "signalProvenance": [
+            "back-ref-confirmed",
+            "phrase-in-title",
+            "phrase-in-abstract",
+            "outcome-phrase-extracted"
+          ]
+        }
+      ]
+    }
+  },
+  "reverseCache": [
+    [
+      "get",
+      "10.5555/rep.failed",
+      "reverse"
+    ],
+    [
+      "put",
+      "10.5555/rep.failed",
+      "reverse"
+    ],
+    [
+      "get",
+      "10.5555/rep.success",
+      "reverse"
+    ],
+    [
+      "put",
+      "10.5555/rep.success",
+      "reverse"
+    ],
+    [
+      "get",
+      "10.5555/rep.ambiguous",
+      "reverse"
+    ],
+    [
+      "put",
+      "10.5555/rep.ambiguous",
+      "reverse"
+    ],
+    [
+      "get",
+      "10.5555/rep.unknown",
+      "reverse"
+    ],
+    [
+      "put",
+      "10.5555/rep.unknown",
+      "reverse"
+    ],
+    [
+      "get",
+      "10.5555/not.replication",
+      "reverse"
+    ],
+    [
+      "put",
+      "10.5555/not.replication",
+      "reverse"
+    ],
+    [
+      "get",
+      "10.5555/missing",
+      "reverse"
+    ],
+    [
+      "put",
+      "10.5555/missing",
+      "reverse"
+    ],
+    [
+      "get",
+      "10.5555/rep.failed",
+      "reverse"
+    ]
+  ],
+  "standalone": {
+    "10.1234": [
+      {
+        "apiSourcesQueried": [],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "10.1234",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [],
+        "modelVerifier": "",
+        "normalizedDoi": "10.1234",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "",
+        "replicationDoi": "10.1234",
+        "replicationTitle": "",
+        "replicationVenue": "",
+        "replicationYear": null,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [],
+        "status": "rejected",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "invalid_or_out_of_scope_doi",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "10.5555/missing": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "10.5555/missing",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "not_found"
+          },
+          {
+            "provider": "crossref",
+            "status": "not_found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/missing",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "",
+        "replicationDoi": "10.5555/missing",
+        "replicationTitle": "",
+        "replicationVenue": "",
+        "replicationYear": null,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [],
+        "status": "needs_more_metadata",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "doi_not_found_in_metadata_providers",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "10.5555/not.replication": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "10.5555/not.replication",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/not.replication",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "F. Author",
+        "replicationDoi": "10.5555/not.replication",
+        "replicationTitle": "Attitudes toward synthetic beverages",
+        "replicationVenue": "Journal of Synthetic Psychology",
+        "replicationYear": 2015,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [],
+        "status": "rejected",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "no_replication_phrase_detected",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "10.5555/rep.ambiguous": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "medium",
+        "inputDoi": "10.5555/rep.ambiguous",
+        "justificationPhrase": "A replication of Brown (2011).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/rep.ambiguous",
+        "originalAuthors": "Brown et al.",
+        "originalDoi": "10.5555/orig.104",
+        "originalReferenceExtracted": "Brown (2011)",
+        "originalTitle": "Original study 104",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2011,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Brown (2011)."
+        ],
+        "replicationAuthors": "C. Replicator",
+        "replicationDoi": "10.5555/rep.ambiguous",
+        "replicationTitle": "A replication of Brown (2011)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2021,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "AMBIGUOUS_TARGET",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "ambiguous-target"
+        ],
+        "status": "ambiguous",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "multiple_or_ambiguous_targets",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "10.5555/rep.failed": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.failed",
+        "justificationPhrase": "A direct replication of Smith et al. (2010) on anchoring.",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/rep.failed",
+        "originalAuthors": "Smith et al.",
+        "originalDoi": "10.5555/orig.101",
+        "originalReferenceExtracted": "Smith et al. (2010)",
+        "originalTitle": "Original study 101",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2010,
+        "outcome": "failed",
+        "outcomePhrase": "We failed to replicate the original effect; the replication found no evidence for anchoring.",
+        "rawSourceSnippets": [
+          "A direct replication of Smith et al. (2010) on anchoring.",
+          "We failed to replicate the original effect; the replication found no evidence for anchoring."
+        ],
+        "replicationAuthors": "A. Replicator",
+        "replicationDoi": "10.5555/rep.failed",
+        "replicationTitle": "A direct replication of Smith et al. (2010) on anchoring",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2019,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "OUTCOME_PHRASE_EXTRACTED"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "outcome-phrase-extracted"
+        ],
+        "status": "accepted",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "10.5555/rep.norefs": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "10.5555/rep.norefs",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/rep.norefs",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "D. Replicator",
+        "replicationDoi": "10.5555/rep.norefs",
+        "replicationTitle": "A conceptual replication of Green (2008)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2018,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [],
+        "status": "needs_more_metadata",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "replication_phrase_detected_but_no_references_available",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "10.5555/rep.noresolve": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "10.5555/rep.noresolve",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/rep.noresolve",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "E. Replicator",
+        "replicationDoi": "10.5555/rep.noresolve",
+        "replicationTitle": "A replication of White (2003)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2017,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [],
+        "status": "needs_more_metadata",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "replication_phrase_detected_but_no_resolvable_target",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "10.5555/rep.success": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.success",
+        "justificationPhrase": "Replication of Jones and Lee (2012).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/rep.success",
+        "originalAuthors": "Jones et al.",
+        "originalDoi": "10.5555/orig.103",
+        "originalReferenceExtracted": "Jones and Lee (2012)",
+        "originalTitle": "Original study 103",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2012,
+        "outcome": "successful",
+        "outcomePhrase": "The original effect was successfully replicated in a larger sample.",
+        "rawSourceSnippets": [
+          "Replication of Jones and Lee (2012).",
+          "The original effect was successfully replicated in a larger sample."
+        ],
+        "replicationAuthors": "B. Replicator",
+        "replicationDoi": "10.5555/rep.success",
+        "replicationTitle": "Replication of Jones and Lee (2012)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2020,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "OUTCOME_PHRASE_EXTRACTED"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "outcome-phrase-extracted"
+        ],
+        "status": "accepted",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "10.5555/rep.unknown": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.unknown",
+        "justificationPhrase": "A replication of Gray (2014).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/rep.unknown",
+        "originalAuthors": "Gray et al.",
+        "originalDoi": "10.5555/orig.109",
+        "originalReferenceExtracted": "Gray (2014)",
+        "originalTitle": "Original study 109",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2014,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Gray (2014)."
+        ],
+        "replicationAuthors": "H. Replicator",
+        "replicationDoi": "10.5555/rep.unknown",
+        "replicationTitle": "A replication of Gray (2014)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2023,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract"
+        ],
+        "status": "accepted",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "10/shortdoi": [
+      {
+        "apiSourcesQueried": [],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "10/shortdoi",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [],
+        "modelVerifier": "",
+        "normalizedDoi": "10/shortdoi",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "",
+        "replicationDoi": "10/shortdoi",
+        "replicationTitle": "",
+        "replicationVenue": "",
+        "replicationYear": null,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [],
+        "status": "rejected",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "invalid_or_out_of_scope_doi",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "fallback:explicit-off": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "10.5555/rep.fallback",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/rep.fallback",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "G. Replicator",
+        "replicationDoi": "10.5555/rep.fallback",
+        "replicationTitle": "A replication of Black (2009)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2022,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [],
+        "status": "needs_more_metadata",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "replication_phrase_detected_but_no_resolvable_target",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "fallback:off": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "10.5555/rep.fallback",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/rep.fallback",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "G. Replicator",
+        "replicationDoi": "10.5555/rep.fallback",
+        "replicationTitle": "A replication of Black (2009)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2022,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [],
+        "status": "needs_more_metadata",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "replication_phrase_detected_but_no_resolvable_target",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "fallback:on": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "10.5555/rep.fallback",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/rep.fallback",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "G. Replicator",
+        "replicationDoi": "10.5555/rep.fallback",
+        "replicationTitle": "A replication of Black (2009)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2022,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [],
+        "status": "needs_more_metadata",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "replication_phrase_detected_but_no_resolvable_target",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "fallback:on+verifier": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "10.5555/rep.fallback",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "canned-model",
+        "normalizedDoi": "10.5555/rep.fallback",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "G. Replicator",
+        "replicationDoi": "10.5555/rep.fallback",
+        "replicationTitle": "A replication of Black (2009)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2022,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [
+          "LLM-verified"
+        ],
+        "status": "needs_more_metadata",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "replication_phrase_detected_but_no_resolvable_target",
+        "verifierReason": "llm: outcome=unknown, conf=medium, no outcome stated",
+        "verifierVersion": "<host-version>"
+      }
+    ],
+    "garbage": [
+      {
+        "apiSourcesQueried": [],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "garbage",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [],
+        "modelVerifier": "",
+        "normalizedDoi": "garbage",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "",
+        "replicationDoi": "garbage",
+        "replicationTitle": "",
+        "replicationVenue": "",
+        "replicationYear": null,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [],
+        "status": "rejected",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "invalid_or_out_of_scope_doi",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "https://doi.org/10.5555/REP.FAILED)": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "https://doi.org/10.5555/REP.FAILED)",
+        "justificationPhrase": "A direct replication of Smith et al. (2010) on anchoring.",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/rep.failed",
+        "originalAuthors": "Smith et al.",
+        "originalDoi": "10.5555/orig.101",
+        "originalReferenceExtracted": "Smith et al. (2010)",
+        "originalTitle": "Original study 101",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2010,
+        "outcome": "failed",
+        "outcomePhrase": "We failed to replicate the original effect; the replication found no evidence for anchoring.",
+        "rawSourceSnippets": [
+          "A direct replication of Smith et al. (2010) on anchoring.",
+          "We failed to replicate the original effect; the replication found no evidence for anchoring."
+        ],
+        "replicationAuthors": "A. Replicator",
+        "replicationDoi": "10.5555/rep.failed",
+        "replicationTitle": "A direct replication of Smith et al. (2010) on anchoring",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2019,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "OUTCOME_PHRASE_EXTRACTED"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "outcome-phrase-extracted"
+        ],
+        "status": "accepted",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "verifier:accepted-row-is-not-reverified": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.failed",
+        "justificationPhrase": "A direct replication of Smith et al. (2010) on anchoring.",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "",
+        "normalizedDoi": "10.5555/rep.failed",
+        "originalAuthors": "Smith et al.",
+        "originalDoi": "10.5555/orig.101",
+        "originalReferenceExtracted": "Smith et al. (2010)",
+        "originalTitle": "Original study 101",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2010,
+        "outcome": "failed",
+        "outcomePhrase": "We failed to replicate the original effect; the replication found no evidence for anchoring.",
+        "rawSourceSnippets": [
+          "A direct replication of Smith et al. (2010) on anchoring.",
+          "We failed to replicate the original effect; the replication found no evidence for anchoring."
+        ],
+        "replicationAuthors": "A. Replicator",
+        "replicationDoi": "10.5555/rep.failed",
+        "replicationTitle": "A direct replication of Smith et al. (2010) on anchoring",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2019,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "OUTCOME_PHRASE_EXTRACTED"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "outcome-phrase-extracted"
+        ],
+        "status": "accepted",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "",
+        "verifierReason": "",
+        "verifierVersion": ""
+      }
+    ],
+    "verifier:agree:ambiguous": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "medium",
+        "inputDoi": "10.5555/rep.ambiguous",
+        "justificationPhrase": "A replication of Brown (2011).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "canned-model",
+        "normalizedDoi": "10.5555/rep.ambiguous",
+        "originalAuthors": "Brown et al.",
+        "originalDoi": "10.5555/orig.104",
+        "originalReferenceExtracted": "Brown (2011)",
+        "originalTitle": "Original study 104",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2011,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Brown (2011)."
+        ],
+        "replicationAuthors": "C. Replicator",
+        "replicationDoi": "10.5555/rep.ambiguous",
+        "replicationTitle": "A replication of Brown (2011)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2021,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "AMBIGUOUS_TARGET",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "ambiguous-target",
+          "LLM-verified",
+          "LLM-disagreed"
+        ],
+        "status": "llm_disagreed",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "llm_verifier_disagreed",
+        "verifierReason": "llm: outcome=failed, conf=high, clear (quote-not-in-source)",
+        "verifierVersion": "<host-version>"
+      }
+    ],
+    "verifier:agree:rep.unknown": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.unknown",
+        "justificationPhrase": "A replication of Gray (2014).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "canned-model",
+        "normalizedDoi": "10.5555/rep.unknown",
+        "originalAuthors": "Gray et al.",
+        "originalDoi": "10.5555/orig.109",
+        "originalReferenceExtracted": "Gray (2014)",
+        "originalTitle": "Original study 109",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2014,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Gray (2014)."
+        ],
+        "replicationAuthors": "H. Replicator",
+        "replicationDoi": "10.5555/rep.unknown",
+        "replicationTitle": "A replication of Gray (2014)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2023,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "LLM-verified"
+        ],
+        "status": "accepted",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "",
+        "verifierReason": "llm: outcome=failed, conf=high, clear (quote-not-in-source)",
+        "verifierVersion": "<host-version>"
+      }
+    ],
+    "verifier:badQuote:rep.unknown": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.unknown",
+        "justificationPhrase": "A replication of Gray (2014).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "canned-model",
+        "normalizedDoi": "10.5555/rep.unknown",
+        "originalAuthors": "Gray et al.",
+        "originalDoi": "10.5555/orig.109",
+        "originalReferenceExtracted": "Gray (2014)",
+        "originalTitle": "Original study 109",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2014,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Gray (2014)."
+        ],
+        "replicationAuthors": "H. Replicator",
+        "replicationDoi": "10.5555/rep.unknown",
+        "replicationTitle": "A replication of Gray (2014)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2023,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "LLM-verified"
+        ],
+        "status": "accepted",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "",
+        "verifierReason": "llm: outcome=failed, conf=high, hallucinated (quote-not-in-source)",
+        "verifierVersion": "<host-version>"
+      }
+    ],
+    "verifier:broken:rep.unknown": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.unknown",
+        "justificationPhrase": "A replication of Gray (2014).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "canned-model",
+        "normalizedDoi": "10.5555/rep.unknown",
+        "originalAuthors": "Gray et al.",
+        "originalDoi": "10.5555/orig.109",
+        "originalReferenceExtracted": "Gray (2014)",
+        "originalTitle": "Original study 109",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2014,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Gray (2014)."
+        ],
+        "replicationAuthors": "H. Replicator",
+        "replicationDoi": "10.5555/rep.unknown",
+        "replicationTitle": "A replication of Gray (2014)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2023,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "LLM-verified",
+          "LLM-disagreed"
+        ],
+        "status": "llm_disagreed",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "llm_verifier_disagreed",
+        "verifierReason": "llm: parse - no JSON object found in response",
+        "verifierVersion": "<host-version>"
+      }
+    ],
+    "verifier:embedded:rep.unknown": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.unknown",
+        "justificationPhrase": "A replication of Gray (2014).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "canned-model",
+        "normalizedDoi": "10.5555/rep.unknown",
+        "originalAuthors": "Gray et al.",
+        "originalDoi": "10.5555/orig.109",
+        "originalReferenceExtracted": "Gray (2014)",
+        "originalTitle": "Original study 109",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2014,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Gray (2014)."
+        ],
+        "replicationAuthors": "H. Replicator",
+        "replicationDoi": "10.5555/rep.unknown",
+        "replicationTitle": "A replication of Gray (2014)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2023,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "LLM-verified",
+          "LLM-disagreed"
+        ],
+        "status": "llm_disagreed",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "llm_verifier_disagreed",
+        "verifierReason": "llm: not-a-replication - not a replication",
+        "verifierVersion": "<host-version>"
+      }
+    ],
+    "verifier:fenced:norefs": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "",
+        "inputDoi": "10.5555/rep.norefs",
+        "justificationPhrase": "",
+        "matchMethod": "",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "canned-model",
+        "normalizedDoi": "10.5555/rep.norefs",
+        "originalAuthors": "",
+        "originalDoi": "",
+        "originalReferenceExtracted": "",
+        "originalTitle": "",
+        "originalVenue": "",
+        "originalYear": null,
+        "outcome": "",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [],
+        "replicationAuthors": "D. Replicator",
+        "replicationDoi": "10.5555/rep.norefs",
+        "replicationTitle": "A conceptual replication of Green (2008)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2018,
+        "ruleIdsTriggered": [],
+        "signalProvenance": [
+          "LLM-verified",
+          "LLM-disagreed"
+        ],
+        "status": "llm_disagreed",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "llm_verifier_disagreed",
+        "verifierReason": "llm: outcome=mixed, conf=low, fenced",
+        "verifierVersion": "<host-version>"
+      }
+    ],
+    "verifier:fenced:rep.unknown": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.unknown",
+        "justificationPhrase": "A replication of Gray (2014).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "canned-model",
+        "normalizedDoi": "10.5555/rep.unknown",
+        "originalAuthors": "Gray et al.",
+        "originalDoi": "10.5555/orig.109",
+        "originalReferenceExtracted": "Gray (2014)",
+        "originalTitle": "Original study 109",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2014,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Gray (2014)."
+        ],
+        "replicationAuthors": "H. Replicator",
+        "replicationDoi": "10.5555/rep.unknown",
+        "replicationTitle": "A replication of Gray (2014)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2023,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "LLM-verified"
+        ],
+        "status": "accepted",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "",
+        "verifierReason": "llm: outcome=mixed, conf=low, fenced",
+        "verifierVersion": "<host-version>"
+      }
+    ],
+    "verifier:garbage:rep.unknown": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.unknown",
+        "justificationPhrase": "A replication of Gray (2014).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "canned-model",
+        "normalizedDoi": "10.5555/rep.unknown",
+        "originalAuthors": "Gray et al.",
+        "originalDoi": "10.5555/orig.109",
+        "originalReferenceExtracted": "Gray (2014)",
+        "originalTitle": "Original study 109",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2014,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Gray (2014)."
+        ],
+        "replicationAuthors": "H. Replicator",
+        "replicationDoi": "10.5555/rep.unknown",
+        "replicationTitle": "A replication of Gray (2014)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2023,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "LLM-verified",
+          "LLM-disagreed"
+        ],
+        "status": "llm_disagreed",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "llm_verifier_disagreed",
+        "verifierReason": "llm: parse - no JSON object found in response",
+        "verifierVersion": "<host-version>"
+      }
+    ],
+    "verifier:throws:rep.unknown": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.unknown",
+        "justificationPhrase": "A replication of Gray (2014).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "test-callback",
+        "normalizedDoi": "10.5555/rep.unknown",
+        "originalAuthors": "Gray et al.",
+        "originalDoi": "10.5555/orig.109",
+        "originalReferenceExtracted": "Gray (2014)",
+        "originalTitle": "Original study 109",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2014,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Gray (2014)."
+        ],
+        "replicationAuthors": "H. Replicator",
+        "replicationDoi": "10.5555/rep.unknown",
+        "replicationTitle": "A replication of Gray (2014)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2023,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "LLM-verified",
+          "LLM-disagreed"
+        ],
+        "status": "llm_disagreed",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "llm_verifier_disagreed",
+        "verifierReason": "llm: error - upstream 503",
+        "verifierVersion": "<host-version>"
+      }
+    ],
+    "verifier:unclear:rep.unknown": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.unknown",
+        "justificationPhrase": "A replication of Gray (2014).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "canned-model",
+        "normalizedDoi": "10.5555/rep.unknown",
+        "originalAuthors": "Gray et al.",
+        "originalDoi": "10.5555/orig.109",
+        "originalReferenceExtracted": "Gray (2014)",
+        "originalTitle": "Original study 109",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2014,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Gray (2014)."
+        ],
+        "replicationAuthors": "H. Replicator",
+        "replicationDoi": "10.5555/rep.unknown",
+        "replicationTitle": "A replication of Gray (2014)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2023,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "LLM-verified",
+          "LLM-disagreed"
+        ],
+        "status": "llm_disagreed",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "llm_verifier_disagreed",
+        "verifierReason": "llm: outcome=unknown, conf=low, unsure",
+        "verifierVersion": "<host-version>"
+      }
+    ],
+    "verifier:unknownOutcome:rep.unknown": [
+      {
+        "apiSourcesQueried": [
+          "openalex",
+          "crossref"
+        ],
+        "codeVersion": "parity-build",
+        "confidence": "high",
+        "inputDoi": "10.5555/rep.unknown",
+        "justificationPhrase": "A replication of Gray (2014).",
+        "matchMethod": "metadata_reference_backref",
+        "metadataProviderReports": [
+          {
+            "provider": "openalex",
+            "status": "found"
+          },
+          {
+            "provider": "crossref",
+            "status": "found"
+          }
+        ],
+        "modelVerifier": "canned-model",
+        "normalizedDoi": "10.5555/rep.unknown",
+        "originalAuthors": "Gray et al.",
+        "originalDoi": "10.5555/orig.109",
+        "originalReferenceExtracted": "Gray (2014)",
+        "originalTitle": "Original study 109",
+        "originalVenue": "Journal of Synthetic Psychology",
+        "originalYear": 2014,
+        "outcome": "unknown",
+        "outcomePhrase": "",
+        "rawSourceSnippets": [
+          "A replication of Gray (2014)."
+        ],
+        "replicationAuthors": "H. Replicator",
+        "replicationDoi": "10.5555/rep.unknown",
+        "replicationTitle": "A replication of Gray (2014)",
+        "replicationVenue": "Replication Reports",
+        "replicationYear": 2023,
+        "ruleIdsTriggered": [
+          "HARD_BACKREF_CONFIRMED",
+          "REPLICATION_PHRASE_TITLE",
+          "REPLICATION_PHRASE_ABSTRACT",
+          "UNKNOWN_OUTCOME"
+        ],
+        "signalProvenance": [
+          "back-ref-confirmed",
+          "phrase-in-title",
+          "phrase-in-abstract",
+          "LLM-verified",
+          "LLM-disagreed"
+        ],
+        "status": "llm_disagreed",
+        "timestamp": "2026-05-04T09:00:00.000Z",
+        "unresolvedReason": "llm_verifier_disagreed",
+        "verifierReason": "llm: outcome=unknown, conf=medium, no outcome stated",
+        "verifierVersion": "<host-version>"
+      }
+    ]
+  },
+  "verifier": {
+    "agree": {
+      "agreed": false,
+      "model": "canned-provider",
+      "rawJson": {
+        "confidence": "high",
+        "isReplication": "yes",
+        "outcome": "failed",
+        "reason": "clear",
+        "supportingQuote": "the replication found no evidence for anchoring"
+      },
+      "reason": "llm: outcome=failed, conf=high, clear",
+      "status": "accepted",
+      "supportingQuote": "the replication found no evidence for anchoring",
+      "version": "<host-version>"
+    },
+    "badQuote": {
+      "agreed": false,
+      "model": "canned-provider",
+      "rawJson": {
+        "confidence": "high",
+        "isReplication": "yes",
+        "outcome": "failed",
+        "reason": "hallucinated",
+        "supportingQuote": "a sentence that is not in the abstract"
+      },
+      "reason": "llm: outcome=failed, conf=high, hallucinated (quote-not-in-source)",
+      "status": "accepted",
+      "supportingQuote": "",
+      "version": "<host-version>"
+    },
+    "broken": {
+      "agreed": false,
+      "model": "canned-provider",
+      "rawJson": "{\"isReplication\": \"yes\", ",
+      "reason": "llm: parse - no JSON object found in response",
+      "status": "needs_more_metadata",
+      "supportingQuote": "",
+      "version": "<host-version>"
+    },
+    "embedded": {
+      "agreed": false,
+      "model": "canned-provider",
+      "rawJson": {
+        "confidence": "high",
+        "isReplication": "no",
+        "outcome": "unknown",
+        "reason": "not a replication",
+        "supportingQuote": ""
+      },
+      "reason": "llm: not-a-replication - not a replication",
+      "status": "rejected",
+      "supportingQuote": "",
+      "version": "<host-version>"
+    },
+    "fenced": {
+      "agreed": false,
+      "model": "canned-provider",
+      "rawJson": {
+        "confidence": "low",
+        "isReplication": "yes",
+        "outcome": "mixed",
+        "reason": "fenced",
+        "supportingQuote": ""
+      },
+      "reason": "llm: outcome=mixed, conf=low, fenced",
+      "status": "accepted",
+      "supportingQuote": "",
+      "version": "<host-version>"
+    },
+    "garbage": {
+      "agreed": false,
+      "model": "canned-provider",
+      "rawJson": "I cannot answer that.",
+      "reason": "llm: parse - no JSON object found in response",
+      "status": "needs_more_metadata",
+      "supportingQuote": "",
+      "version": "<host-version>"
+    },
+    "promptSeen": "SYSTEM: You are a careful meta-science assistant verifying whether a paper is a replication study.\n\nRules (these are non-negotiable):\n - If the abstract does NOT clearly state the replication outcome, answer outcome=\"unknown\" and supportingQuote=\"\".\n - Do NOT infer the outcome from the title. The title alone is insufficient evidence.\n - Do NOT cite a sentence that does not appear verbatim in the input abstract. If you cannot find a verbatim sentence, return supportingQuote=\"\".\n - Output strictly valid JSON with this schema and no prose:\n   {\"isReplication\":\"yes\"|\"no\"|\"unclear\",\"outcome\":\"successful\"|\"failed\"|\"mixed\"|\"unknown\",\"supportingQuote\":\"...\",\"confidence\":\"high\"|\"medium\"|\"low\",\"reason\":\"...\"}\n\nINPUT DOI: 10.5555/rep.failed (normalized: 10.5555/rep.failed)\nRULE-BASED STATUS (for context only): needs_more_metadata\nRULE-BASED UNRESOLVED REASON: unknown_outcome_or_ambiguous_target\n\nTITLE: A direct replication of Smith et al. (2010) on anchoring\n\nABSTRACT:\nWe conducted a direct replication of Smith et al. (2010). We failed to replicate the original effect; the replication found no evidence for anchoring.\n\nCANDIDATE ORIGINAL TARGETS (from rule-based extractor):\n[T1] doi=10.5555/orig.101 title=Original study 101 firstAuthor= year=2010\n\nAnswer the three questions and return JSON only.",
+    "throws": {
+      "agreed": false,
+      "model": "test-callback",
+      "reason": "llm: error - upstream 503",
+      "status": "needs_more_metadata",
+      "supportingQuote": "",
+      "version": "<host-version>"
+    },
+    "unclear": {
+      "agreed": false,
+      "model": "canned-provider",
+      "rawJson": {
+        "confidence": "low",
+        "isReplication": "unclear",
+        "outcome": "unknown",
+        "reason": "unsure",
+        "supportingQuote": ""
+      },
+      "reason": "llm: outcome=unknown, conf=low, unsure",
+      "status": "ambiguous",
+      "supportingQuote": "",
+      "version": "<host-version>"
+    },
+    "unknownOutcome": {
+      "agreed": true,
+      "model": "canned-provider",
+      "rawJson": {
+        "confidence": "medium",
+        "isReplication": "yes",
+        "outcome": "unknown",
+        "reason": "no outcome stated",
+        "supportingQuote": ""
+      },
+      "reason": "llm: outcome=unknown, conf=medium, no outcome stated",
+      "status": "needs_more_metadata",
+      "supportingQuote": "",
+      "version": "<host-version>"
+    }
+  },
+  "verifierCalls": [
+    {
+      "doi": "10.5555/rep.fallback",
+      "status": "needs_more_metadata",
+      "targets": 0,
+      "unresolvedReason": "replication_phrase_detected_but_no_resolvable_target"
+    },
+    {
+      "doi": "10.5555/rep.unknown",
+      "status": "accepted",
+      "targets": 1,
+      "unresolvedReason": "unknown_outcome_or_ambiguous_target"
+    },
+    {
+      "doi": "10.5555/rep.unknown",
+      "status": "accepted",
+      "targets": 1,
+      "unresolvedReason": "unknown_outcome_or_ambiguous_target"
+    },
+    {
+      "doi": "10.5555/rep.unknown",
+      "status": "accepted",
+      "targets": 1,
+      "unresolvedReason": "unknown_outcome_or_ambiguous_target"
+    },
+    {
+      "doi": "10.5555/rep.unknown",
+      "status": "accepted",
+      "targets": 1,
+      "unresolvedReason": "unknown_outcome_or_ambiguous_target"
+    },
+    {
+      "doi": "10.5555/rep.unknown",
+      "status": "accepted",
+      "targets": 1,
+      "unresolvedReason": "unknown_outcome_or_ambiguous_target"
+    },
+    {
+      "doi": "10.5555/rep.unknown",
+      "status": "accepted",
+      "targets": 1,
+      "unresolvedReason": "unknown_outcome_or_ambiguous_target"
+    },
+    {
+      "doi": "10.5555/rep.unknown",
+      "status": "accepted",
+      "targets": 1,
+      "unresolvedReason": "unknown_outcome_or_ambiguous_target"
+    },
+    {
+      "doi": "10.5555/rep.unknown",
+      "status": "accepted",
+      "targets": 1,
+      "unresolvedReason": "unknown_outcome_or_ambiguous_target"
+    },
+    {
+      "doi": "10.5555/rep.unknown",
+      "status": "accepted",
+      "targets": 1,
+      "unresolvedReason": "unknown_outcome_or_ambiguous_target"
+    },
+    {
+      "doi": "10.5555/rep.ambiguous",
+      "status": "ambiguous",
+      "targets": 1,
+      "unresolvedReason": "multiple_or_ambiguous_targets"
+    },
+    {
+      "doi": "10.5555/rep.norefs",
+      "status": "needs_more_metadata",
+      "targets": 0,
+      "unresolvedReason": "replication_phrase_detected_but_no_references_available"
+    }
+  ]
+}

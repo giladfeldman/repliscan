@@ -33,3 +33,13 @@ export * from './discovery/engine/classifierBridge.js';
 export * from './discovery/engine/runPersistence.js';
 export * from './discovery/engine/runner.js';
 export * from './discovery/spec/bundledSpecDir.js';
+// v0.2: lookup pipelines (FReD lookup, forward / reverse / standalone extraction, verifier)
+export * from './util/lookupDoi.js';
+export * from './util/libraryVersion.js';
+export * from './fred/floraLookup.js';
+export * from './fred/bundled.js';
+export * from './pipeline/ports.js';
+export * from './pipeline/forward.js';
+export * from './pipeline/reverse.js';
+export * from './pipeline/standalone.js';
+export * from './pipeline/verifier.js';

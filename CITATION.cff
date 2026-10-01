@@ -6,7 +6,7 @@ authors:
   - family-names: Feldman
     given-names: Gilad
     affiliation: University of Innsbruck
-version: "0.1.3"
+version: "0.2.0"
 license: MIT
 repository-code: "https://github.com/giladfeldman/repliscan"
 abstract: >-
@@ -21,3 +21,12 @@ keywords:
   - research integrity
   - OpenAlex
   - Crossref
+references:
+  - type: dataset
+    title: "FReD: the FORRT Replication Database"
+    authors:
+      - name: "Framework for Open and Reproducible Research Training (FORRT)"
+    doi: "10.17605/OSF.IO/9R62X"
+    url: "https://github.com/forrtproject/FReD-data"
+    license: CC-BY-4.0
+    notes: "Bundled as a converted snapshot (dist/data/flora-replications.json); see NOTICE."

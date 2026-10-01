@@ -71,7 +71,7 @@ not published to the npm registry. Pin a tag directly:
 ```jsonc
 // package.json
 "dependencies": {
-  "repliscan": "github:giladfeldman/repliscan#v0.1.3"
+  "repliscan": "github:giladfeldman/repliscan#v0.2.0"
 }
 ```
 
@@ -160,6 +160,30 @@ console.table(rows);  // one row: 10.5555/example-1, score 1, status pending,
                       // keywords REGISTERED_REP,FAILED_TO_REP,REGISTERED_REPLICATION_REPORT,USER_REPLICAT_
 ```
 
+## Command line
+
+```
+repliscan fred --doi 10.1002/bdm.492             # bundled FReD lookup, fully offline
+repliscan replications --doi <doi>               # replications OF a paper: FReD + citation graph (network)
+repliscan targets --doi <doi>                    # is this paper a replication, and of what? (network)
+repliscan extract --doi <doi> [--format csv]     # per-target records (network)
+echo '{"command":"fred","doi":"<doi>"}' | repliscan --stdin
+```
+
+Output is one JSON object on stdout (`command`, `doi`, `libraryVersion`, `result`); errors are one
+JSON object on stderr and exit code 1. The network commands read `OPENALEX_API_KEY`,
+`OPENALEX_MAILTO` (your contact email for the OpenAlex polite pool), `SEMANTIC_SCHOLAR_API_KEY`,
+`OPENCITATIONS_BASE_URL` and `OPENCITATIONS_ACCESS_TOKEN`. The pipelines behind these commands, and how a
+host application plugs in its own cache, credentials and verifier, are described in
+[docs/API.md](docs/API.md#lookup-pipelines-v02).
+
+## Data and credits
+
+The bundled replication database is **FReD**, the FORRT Replication Database
+(<https://github.com/forrtproject/FReD-data>, DOI 10.17605/OSF.IO/9R62X), licensed
+**CC-BY-4.0**. It ships converted to a JSON index in `dist/data/flora-replications.json`; credit FReD
+wherever you show results derived from it. See [NOTICE](NOTICE).
+
 ## Using it against the live APIs
 
 These calls need network access and are **not** run by the docs gate. Treat the output as
@@ -198,6 +222,7 @@ reads no environment variables.
 | Filter and rank | `applyExclusions`, `loadExclusionPatterns`, `patternsFromEffective`, `computeSearchScore`, `loadRankingWeights`, `weightsFromEffective`, `normalizeCandidate`, `mergeCandidates` |
 | Spec from a database | `resolveEffectiveSpec`, `SpecDb`, `mergeOverride`, `hashSpec`, `canonicalJsonStringify`, `BUNDLED_SPEC_DIR` |
 | Classifier | `classifyReplication`, `hasReplicationPhrase`, `findReplicationPhrase`, `extractTargets`, `resolveTarget`, `classifyOutcome`, `scoreConfidence`, `classifyCandidate` |
+| Lookup pipelines | `findReplicationsForDoi`, `extractReplication`, `extractReplicationStandalone`, `recordsToCsv`, `dedupFindings`, `checkFloraReplications`, `loadBundledFred`, `createLlmVerifier`, `CachePort`, `VerifierPort` |
 | Metadata | `resolveWork`, `resolveWorkDetailed`, `DEFAULT_METADATA_PROVIDERS`, `getWork`, `getCitingWorks`, `resolveAuthorYearViaCrossref`, `normalizeDoi` |
 
 Every export, including all the types and small helpers, is documented with its fields
@@ -277,7 +302,7 @@ node scripts/check-docs-coverage.mjs   # documentation-drift gate: builds, runs 
 ## How to cite
 
 Please cite the software (see [CITATION.cff](CITATION.cff)): Feldman, G. (2026).
-*repliscan: replication-study discovery and classification* (Version 0.1.2)
+*repliscan: replication-study discovery and classification* (Version 0.2.0)
 [Computer software]. https://github.com/giladfeldman/repliscan
 
 ## License

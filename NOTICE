@@ -1,0 +1,15 @@
+repliscan
+Copyright (c) Gilad Feldman. MIT licence (see LICENSE).
+
+This package bundles a snapshot of the FORRT Replication Database (FReD), file
+data/flora-replications.json (shipped as dist/data/flora-replications.json):
+
+  FORRT. FReD: the FORRT Replication Database.
+  https://github.com/forrtproject/FReD-data
+  DOI 10.17605/OSF.IO/9R62X
+  Licence: Creative Commons Attribution 4.0 International (CC-BY-4.0),
+  https://creativecommons.org/licenses/by/4.0/
+
+The snapshot was converted from the database's CSV export into the JSON index this
+library reads (replications grouped by original DOI). If you show results derived from
+it, credit FReD as above.

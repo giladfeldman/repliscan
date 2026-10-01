@@ -14,6 +14,7 @@ file or from the README.
 - [Metadata resolution](#metadata-resolution)
 - [Output shapes](#output-shapes)
 - [Discovery data types](#discovery-data-types)
+- [Lookup pipelines (v0.2)](#lookup-pipelines-v02)
 
 ---
 
@@ -537,3 +538,144 @@ supplied it.
   - `SourceConfig`: `base_url`, `works_endpoint`, `auth`, `rate_limit`, `query_template`,
     `pagination` and `filters`.
   - `SourceRateLimit`: `verified_at`, `requests_per_second` and `requests_per_day`.
+
+
+---
+
+## Lookup pipelines (v0.2)
+
+The pipelines that turn a DOI into replication findings: the FReD curated-database lookup, the
+forward lookup ("what replicated this paper?"), the reverse lookup ("is this paper a replication,
+and of what?"), the standalone record extractor, and the verifier that double-checks uncertain
+rows. They run unchanged from the application they were extracted from; the host application
+fills in a few **ports**, and the library ships no database, queue, AI-provider or environment code:
+
+| Port | What the host supplies | Where |
+|---|---|---|
+| `CachePort` | result cache; the host decides expiry | `cache` option |
+| `VerifierPort` | the second-opinion function for uncertain rows | `verifier` option |
+| `MetadataCredentials` | API keys and the polite-pool contact email | `credentials` option |
+| progress and scheduling | not in the library: batch runs, queues and persistence stay in the host | n/a |
+
+The library never reads `process.env` in these modules; the command line (`repliscan`) is the one
+place that does, and it is a host like any other.
+
+### FReD lookup
+
+The bundled snapshot is the FORRT Replication Database (FReD), licensed CC-BY-4.0
+(<https://github.com/forrtproject/FReD-data>). Credit it wherever results derived from it are shown;
+the `NOTICE` file ships with the package.
+
+| Export | Purpose |
+|---|---|
+| `loadBundledFred()` | Load the snapshot shipped in the package (`data/flora-replications.json`); read once, cached. |
+| `checkFloraReplications(doi, floraData)` | Look a DOI up in a `FloraDatabase`; returns a `replication-status` issue object with `metadata` (see below) or `null` when the paper has no FReD entry. |
+| `parseAndIndexFloraCsv(csvText)` | Parse the FReD CSV into a `FloraDatabase` indexed by original DOI (handles quoted fields, a BOM, and the JSON author column). |
+| `mapFloraOutcome(outcome)` | Map a FReD outcome label to `{ type, severity }`: `successful`, `failed`, `mixed` (reported as `partial`), labels containing `flawed` / `challenges` / `issues` (`partial`), anything else `unknown`. |
+| `aggregateOutcome(outcomes)` | Worst-case aggregation of several outcomes: `failed` over `partial` over `unknown` over `successful`; an empty list is `unknown`. |
+| `floraHitToFindings(floraHit, originalDoi)` | Turn a `checkFloraReplications` hit into `ReplicationFinding` rows (confidence `high`, provenance `fred`). |
+
+`FloraDatabase` has `version`, `lastUpdated`, `source`, `license`, `totalOriginals`, `totalEntries` and
+`byDoi`; each `byDoi` value is a `FloraOriginal` (`title`, `authors`, `journal`, `year`, `replications`)
+whose `replications` are `FloraReplication` rows (`doi`, `title`, `authors`, `journal`, `year`,
+`outcome`, `outcomeQuote`, `type`, `source`).
+
+A `checkFloraReplications` hit carries `type`, `severity`, `code`, `description`, `location`, `suggestion`
+(`severity` is `warning` when the worst outcome is `failed` or partial, otherwise `info`) and `metadata` with `doi`, `replicationType`, `replicationCount`, `replicationDOIs`, `source`,
+`determinationMethod`, `floraDataVersion` and `replicationDetails`: one `FloraReplicationDetail`
+(`doi`, `title`, `authors`, `journal`, `year`, `outcome`, `outcomeType`, `outcomeQuote`, `type`,
+`projectSource`) per replication.
+
+> **Known limitation.** The `license` field written into a parsed `FloraDatabase` and into the bundled
+> snapshot says `MIT`; the FReD data's own licence is CC-BY-4.0. The field is metadata only and is not
+> used in any finding. It will be corrected in a later release (a deliberate output change, tracked separately).
+
+### Forward lookup
+
+`findReplicationsForDoi(doi, opts?)` returns a `ForwardResult` (`originalDoi`, `targets`): the FReD hit
+passed in `opts.floraHit`, merged with replications found through the citation graph. Citation-graph
+candidates must **back-reference** the target (their reference list contains the target's OpenAlex id) and
+are classified by `classifyReplication`; only `high` and `medium` confidence findings are kept. A candidate
+with a thin abstract is enriched from the other metadata providers (4 s limit each) first.
+
+`ForwardOptions`: `floraHit`, `targetTitle`, `targetAuthors`, `targetVenue`, `targetFirstAuthor`,
+`targetYear`, `signal` (an `AbortSignal`; checked before the enrichment fan-out), `cache` (a `CachePort`)
+and `credentials`.
+
+`dedupFindings(findings)` merges findings that name the same replication DOI: strongest confidence, the
+most cautious outcome (`failed` over `mixed` over `successful` over `unknown`; a partial replication is never
+upgraded to a clean success), and the union of `signalProvenance` and `evidence`.
+
+### Reverse lookup
+
+`extractReplication(doi, opts?)` returns a `ReverseExtractorResult`: it resolves the paper's metadata and
+runs `classifyReplication` over its title, abstract and references. `ReverseOptions` has `cache`.
+The metadata lookup in this function uses the providers' default credentials (it has always done so);
+passing caller credentials through is tracked as a separate change.
+
+### Standalone record extractor
+
+`extractReplicationStandalone(doi, options?)` returns one `ExtractorRecord` per target (or one record that says
+why there is none). It never throws for an unresolvable DOI; read `status` and `unresolvedReason`.
+
+`ExtractorStatus`: `accepted`, `rejected`, `needs_more_metadata`, `ambiguous`, `llm_disagreed`.
+
+`ExtractorOptions`:
+
+| Option | Meaning |
+|---|---|
+| `now` | clock for the `timestamp` field |
+| `codeVersion` | build identifier stamped on every record; default `repliscan@<library version>` |
+| `verifier` | a `VerifierPort`; rows that are not `accepted` with a known outcome are sent to it |
+| `credentials` | metadata-provider credentials |
+| `enableCrossrefAuthorYearFallback` | try Crossref to resolve an "Author (YYYY)" mention when no reference matched; default `false` |
+
+> **Known defect.** `enableCrossrefAuthorYearFallback` currently cannot produce a finding: the confidence it
+> assigns to a Crossref-only match is always `low`, and `low` results are discarded. Enabling it makes extra
+> Crossref calls and changes nothing in the output. It stays off by default and the behaviour is pinned by a test
+> until the rule is decided and calibrated.
+
+`ExtractorRecord` carries `inputDoi`, `normalizedDoi`, `status`, the replication and original paper fields
+(`replicationDoi`, `replicationTitle`, `replicationAuthors`, `replicationVenue`, `replicationYear`, `originalDoi`,
+`originalTitle`, `originalAuthors`, `originalVenue`, `originalYear`, `originalReferenceExtracted`), the evidence
+(`justificationPhrase`, `outcome`, `outcomePhrase`, `confidence`, `matchMethod`, `rawSourceSnippets`,
+`ruleIdsTriggered`, `signalProvenance`), the providers consulted (`apiSourcesQueried`,
+`metadataProviderReports`), the verifier fields (`modelVerifier`, `verifierVersion`, `verifierReason`) and
+`timestamp`, `codeVersion`, `unresolvedReason`.
+
+`recordsToCsv(records)` renders records as CSV with the columns in `EXTRACTOR_CSV_COLUMNS` (list values joined
+with ` | `, fields quoted when needed, a header row always present).
+
+### Verifier
+
+`VerifierPort` is `(input: VerifierInput) => Promise<VerificationResult>`. The library supplies the parts
+that make a verdict trustworthy and none that need credentials; the host supplies the model call.
+
+| Export | Purpose |
+|---|---|
+| `createLlmVerifier({ callLlm, version, errorModel })` | Build a `VerifierPort` from a host function `callLlm(prompt)` that returns an `LlmResponse` (`content`, optional `model`, `provider`). A throwing `callLlm` becomes a failed result with model `errorModel` (default `llm-callback`), never an exception. |
+| `buildVerifierPrompt(input)` | The exact prompt `createLlmVerifier` sends, for hosts that route the call themselves. |
+| `parseVerifierResponse(response, input, version)` | Parse a model answer (bare JSON, fenced JSON or JSON embedded in prose) into a `VerificationResult`. |
+| `verificationFailure({ reason, model, inputStatus, version, rawJson })` | Build a failed result, for example "no provider available". |
+| `LLM_VERIFIER_SENTINELS` | The `model` strings (`NO_USER_ID`, `NO_PROVIDER`, `NO_DB`) a host can use so a UI can tell "could not run" from "ran and disagreed". |
+
+`VerifierInput` is `inputDoi`, `normalizedDoi`, `status`, `title`, `abstract`, `targets` and `unresolvedReason`.
+`VerificationResult` is `model`, `version`, `agreed`, `status`, `reason`, `supportingQuote` and `rawJson`.
+
+Anti-hallucination guard, applied whatever the model reports about its own confidence: a `supportingQuote`
+that is not a case-insensitive substring of the abstract is blanked and `(quote-not-in-source)` is appended
+to the reason.
+
+### Helpers
+
+| Export | Purpose |
+|---|---|
+| `normalizeLookupDoi(doi)` | The DOI normaliser the pipelines use: URL-decode once, lowercase, strip the doi.org prefixes and `doi:`, and strip trailing `.` `,` `;` `)` `]` `/`. Not the same function as `normalizeDoi` (which leaves `,` `;` `)` `]`); unifying the two is a behaviour change and is tracked separately. |
+| `isMalformedDoi(doi)` | True for truncated or malformed DOIs; accepts `10.<registrant>/<suffix>` and the short form `10/<token>`. |
+| `isShortFormDoi(doi)` | True for the short form `10/<token>`, which lookups skip. |
+| `libraryVersion()` | The installed library version, read from its own `package.json`. |
+| `ReplicationDirection` | `forward` or `reverse`: the `direction` argument of `CachePort`. |
+
+`CachePort` has two methods: `get(doi, direction)` returns the stored response or `null` when there is none or
+it has expired, and `put(doi, direction, response)` stores one. A failing cache should throw rather than
+return a stale or empty value.
